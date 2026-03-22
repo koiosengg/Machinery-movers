@@ -1,45 +1,67 @@
 import React, { useEffect, useRef, useState } from "react";
-import ServicesImage1 from "../../../assets/Services/HeavyMachineLiftingAndShifting/Services/Services Image 1.png";
-import ServicesImage2 from "../../../assets/Services/HeavyMachineLiftingAndShifting/Services/Services Image 2.png";
-import ServicesImage3 from "../../../assets/Services/HeavyMachineLiftingAndShifting/Services/Services Image 3.png";
-import ServicesImage4 from "../../../assets/Services/HeavyMachineLiftingAndShifting/Services/Services Image 4.png";
-import ServicesImage5 from "../../../assets/Services/HeavyMachineLiftingAndShifting/Services/Services Image 5.png";
+import serviceImg1 from "../../../assets/Services/HeavyMachineLiftingAndShifting/Services/Services Image 1.png";
+import serviceImg2 from "../../../assets/Services/HeavyMachineLiftingAndShifting/Services/Services Image 2.png";
+import serviceImg3 from "../../../assets/Services/HeavyMachineLiftingAndShifting/Services/Services Image 3.png";
+import serviceImg4 from "../../../assets/Services/HeavyMachineLiftingAndShifting/Services/Services Image 4.png";
+import serviceImg5 from "../../../assets/Services/HeavyMachineLiftingAndShifting/Services/Services Image 5.png";
 
 function Services() {
+  const servicesData = [
+    { img: serviceImg1, text: "24/7 emergency shifting support" },
+    { img: serviceImg2, text: "Heavy machinery loading & unloading" },
+    { img: serviceImg3, text: "Factory relocation services" },
+    { img: serviceImg4, text: "Precision equipment installation" },
+    { img: serviceImg5, text: "Industrial rigging solutions" },
+    { img: serviceImg1, text: "Safe transportation of heavy equipment" },
+    { img: serviceImg2, text: "On-site dismantling & reassembly" },
+    { img: serviceImg3, text: "Crane and forklift assistance" },
+    { img: serviceImg4, text: "Warehouse shifting services" },
+    { img: serviceImg5, text: "End-to-end project management" },
+  ];
+
+  const visibleSlides = 4;
+  const slidesCount = servicesData.length - visibleSlides;
+
   const [activeIndex, setActiveIndex] = useState(0);
-  const intervalRef = useRef(null);
+  const [slideWidth, setSlideWidth] = useState(0);
 
-  const servicesText = [
-    "SHIFTING of all types of industrial machinery",
-    "skilled rigging and handling",
-    "precision alignment after shifting",
-    "safe and damage free movement",
-    "expertise in factory relocation and internal plant shifting",
-  ];
-
-  const servicesImages = [
-    ServicesImage1,
-    ServicesImage2,
-    ServicesImage3,
-    ServicesImage4,
-    ServicesImage5,
-  ];
-
-  const startTimer = () => {
-    clearInterval(intervalRef.current);
-    intervalRef.current = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % servicesText.length);
-    }, 4000);
-  };
+  const containerRef = useRef(null);
+  const slideRef = useRef(null);
 
   useEffect(() => {
-    startTimer();
-    return () => clearInterval(intervalRef.current);
+    const updateWidth = () => {
+      if (!containerRef.current) return;
+
+      setSlideWidth(containerRef.current.getBoundingClientRect().width);
+    };
+
+    updateWidth();
+    window.addEventListener("resize", updateWidth);
+
+    return () => window.removeEventListener("resize", updateWidth);
   }, []);
 
-  const handleClick = (index) => {
-    setActiveIndex(index);
-    startTimer(); // restart timer from clicked item
+  useEffect(() => {
+    if (!slideRef.current) return;
+
+    slideRef.current.style.transform = `translate3d(-${
+      activeIndex * (slideWidth / 4 - 15 + 20)
+    }px, 0, 0)`;
+  }, [activeIndex, slideWidth]);
+
+  const isFirst = activeIndex === 0;
+  const isLast = activeIndex === slidesCount;
+
+  const handlePrev = () => {
+    if (!isFirst) {
+      setActiveIndex((prev) => prev - 1);
+    }
+  };
+
+  const handleNext = () => {
+    if (!isLast) {
+      setActiveIndex((prev) => prev + 1);
+    }
   };
 
   return (
@@ -53,34 +75,94 @@ function Services() {
         </p>
       </header>
 
-      <div className="services-services">
-        {/* TEXT */}
-        <div className="services-services-text">
-          {servicesText.map((text, index) => (
-            <h3
-              key={index}
-              className={
-                index === activeIndex ? "active-services-services" : ""
-              }
-              onClick={() => handleClick(index)}
-            >
-              {text}
-            </h3>
+      <div className="services-services" ref={containerRef}>
+        <div className="services-services-slide" ref={slideRef}>
+          {servicesData.map((item, index) => (
+            <article className="services-services-set" key={index}>
+              <img src={item.img} alt={`service-${index}`} />
+              <p>{item.text}</p>
+            </article>
           ))}
         </div>
-
-        {/* IMAGES */}
-        <div className="services-services-imgs">
-          {servicesImages.map((img, index) => (
-            <div
-              key={index}
-              className={`services-services-img ${
-                index === activeIndex ? "active-services-services-img" : ""
-              }`}
+        <div className="about-clients-left-controls">
+          <button
+            onClick={!isFirst ? handlePrev : undefined}
+            style={{
+              opacity: isFirst ? 0.3 : 1,
+              cursor: isFirst ? "default" : "pointer",
+              pointerEvents: isFirst ? "none" : "auto",
+            }}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
             >
-              <img src={img} alt={`Services Image ${index + 1}`} />
-            </div>
-          ))}
+              <mask
+                id="mask0_583_3864"
+                style={{ maskType: "alpha" }}
+                maskUnits="userSpaceOnUse"
+                x="0"
+                y="0"
+                width="20"
+                height="20"
+              >
+                <rect
+                  width="20"
+                  height="20"
+                  transform="matrix(-1 0 0 1 20 0)"
+                  fill="#D9D9D9"
+                />
+              </mask>
+              <g mask="url(#mask0_583_3864)">
+                <path
+                  d="M12.9834 16.6666L14.1667 15.4833L8.68341 9.99992L14.1667 4.51659L12.9834 3.33325L6.31675 9.99992L12.9834 16.6666Z"
+                  fill="#030F27"
+                />
+              </g>
+            </svg>
+          </button>
+          <button
+            onClick={!isLast ? handleNext : undefined}
+            style={{
+              opacity: isLast ? 0.3 : 1,
+              cursor: isLast ? "default" : "pointer",
+              pointerEvents: isLast ? "none" : "auto",
+            }}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+            >
+              <mask
+                id="mask0_583_3864"
+                style={{ maskType: "alpha" }}
+                maskUnits="userSpaceOnUse"
+                x="0"
+                y="0"
+                width="20"
+                height="20"
+              >
+                <rect
+                  width="20"
+                  height="20"
+                  transform="matrix(-1 0 0 1 20 0)"
+                  fill="#D9D9D9"
+                />
+              </mask>
+              <g mask="url(#mask0_583_3864)">
+                <path
+                  d="M12.9834 16.6666L14.1667 15.4833L8.68341 9.99992L14.1667 4.51659L12.9834 3.33325L6.31675 9.99992L12.9834 16.6666Z"
+                  fill="#030F27"
+                />
+              </g>
+            </svg>
+          </button>
         </div>
       </div>
     </section>

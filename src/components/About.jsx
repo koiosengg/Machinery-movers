@@ -1,6 +1,7 @@
 import React from "react";
 import Numbers from "./About/Numbers";
 import Company from "./About/Company";
+import Proprietor from "./About/Proprietor";
 import Yellow from "./Home/Yellow";
 import Move from "./Home/Move";
 import Clients from "./About/Clients";
@@ -14,6 +15,7 @@ function About() {
     <>
       <Hero />
       <Numbers />
+      <Proprietor />
       <Company />
       <Move />
       <Yellow />

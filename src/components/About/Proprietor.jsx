@@ -5,15 +5,16 @@ function Proprietor() {
   return (
     <section className="home-about about-company">
       <div className="home-about-content">
-        <h2>About the Proprietor</h2>
+        <h2>Leadership Built on Experience</h2>
         <div className="home-about-text">
           <p className="home-about-para">
-            We would like to introduce ourselves as one of the leading Material
-            Handlers carrying out Loading & unloading activity with the help of
-            suitable Hydraulic Telescopic mobile Crane, Machine Movement
-            internal & external, even on Epoxy painted floor with the help of
-            our manual labour using sophisticated equipment in many of the
-            reputed factories in and around Karnataka State
+            With over 25 years of hands-on industry experience, Mr. Chinnappa
+            has built Machinery Movers into a trusted name in industrial
+            material handling, machinery shifting, and heavy equipment
+            relocation. Under his leadership, the company has successfully
+            partnered with 300+ manufacturing units, OEMs, engineering
+            companies, and industrial organizations, delivering safe, efficient,
+            and execution-driven solutions across India.
           </p>
         </div>
       </div>

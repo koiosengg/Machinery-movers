@@ -1,5 +1,5 @@
 import React from "react";
-import Sample from "../../assets/Projects/Banner/Projects Video.mp4";
+import ProjectBanner from "../../assets/Projects/Banner/Project.png";
 import AwardImage from "../../assets/Projects/Tata/Image.png";
 
 function Banner() {
@@ -20,7 +20,7 @@ function Banner() {
 
       <div className="home-banner-gallery">
         <div className="home-banner-gallery-slide">
-          <video src={Sample} muted autoPlay loop playsInline />
+          <img src={ProjectBanner} alt="Projects Banner" />
         </div>
 
         <div className="projects-banner-overlay">

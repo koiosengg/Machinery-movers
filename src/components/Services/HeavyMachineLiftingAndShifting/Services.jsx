@@ -1,22 +1,111 @@
 import React, { useEffect, useRef, useState } from "react";
-import serviceImg1 from "../../../assets/Services/HeavyMachineLiftingAndShifting/Services/Services Image 1.png";
-import serviceImg2 from "../../../assets/Services/HeavyMachineLiftingAndShifting/Services/Services Image 2.png";
-import serviceImg3 from "../../../assets/Services/HeavyMachineLiftingAndShifting/Services/Services Image 3.png";
-import serviceImg4 from "../../../assets/Services/HeavyMachineLiftingAndShifting/Services/Services Image 4.png";
-import serviceImg5 from "../../../assets/Services/HeavyMachineLiftingAndShifting/Services/Services Image 5.png";
+import img24_7EmergencyShiftingSupport from "../../../assets/Services/HeavyMachineLiftingAndShifting/Services/24_7 emergency shifting support.jpg";
+import imgContainerStuffingDestuffingExpertise from "../../../assets/Services/HeavyMachineLiftingAndShifting/Services/Container Stuffing & de-stuffing expertise.jpg";
+import imgConternerStuffingExpertise from "../../../assets/Services/HeavyMachineLiftingAndShifting/Services/Conterner Stuffing expertise.jpg";
+import imgCranesAndArrangment from "../../../assets/Services/HeavyMachineLiftingAndShifting/Services/Cranes and arrangment.jpg";
+import imgExpertiseInFactoryRelocationInternalPlantShifting from "../../../assets/Services/HeavyMachineLiftingAndShifting/Services/Expertise in factory relocation internal plant shifting.jpg";
+import imgForliftSupprtWithCertifiedOperators from "../../../assets/Services/HeavyMachineLiftingAndShifting/Services/Forlift supprt with certified operators.jpg";
+import imgHandlingCNCVMCInjectionMoldingMachinesAndHeavyPress from "../../../assets/Services/HeavyMachineLiftingAndShifting/Services/Handling CNC ,VMC,Injection molding Machines and heavy press.jpg";
+import imgHandlingUpToMultiTonEquipment from "../../../assets/Services/HeavyMachineLiftingAndShifting/Services/Handling up to multi-ton equipment.jpg";
+import imgHeavyEquipmentPostioningWithMilimeterAccuracy from "../../../assets/Services/HeavyMachineLiftingAndShifting/Services/Heavy equipment postioning with milimeter accuracy.jpg";
+import imgInPlantMachineRearrangementLayoutShifting from "../../../assets/Services/HeavyMachineLiftingAndShifting/Services/In plant machine rearrangement & layout shifting .jpg";
+import imgLevelingAndAlignmentSupport from "../../../assets/Services/HeavyMachineLiftingAndShifting/Services/Leveling and alignment support.jpg";
+import imgProfessionalDismentalingServices from "../../../assets/Services/HeavyMachineLiftingAndShifting/Services/Professional dismentaling services.jpg";
+import imgProperMarkingAndPackingForReInstalling from "../../../assets/Services/HeavyMachineLiftingAndShifting/Services/Proper marking and packing for re-installing.jpg";
+import imgRiskAssessmnetAndMethodStatementPreparation from "../../../assets/Services/HeavyMachineLiftingAndShifting/Services/risk assessmnet and method statement preparation.jpg";
+import imgSafeAndDamageFreeMovement from "../../../assets/Services/HeavyMachineLiftingAndShifting/Services/Safe and damage free movement.jpg";
+import imgSafeLiftingUpTo100TonCapacity from "../../../assets/Services/HeavyMachineLiftingAndShifting/Services/Safe lifting up to 100+ ton capacity.jpg";
+import imgSafeRemovalOfHeavyComponents from "../../../assets/Services/HeavyMachineLiftingAndShifting/Services/Safe removal of heavy components.jpg";
+import imgSafeUnlkoadingAtDestination from "../../../assets/Services/HeavyMachineLiftingAndShifting/Services/safe unlkoading at destination.jpg";
+import imgSkilledManpowerWithPPEAndSaftyCompliance from "../../../assets/Services/HeavyMachineLiftingAndShifting/Services/Skilled manpower with PPE and safty compliance.jpg";
+import imgSkilledRiggingAndHandling1 from "../../../assets/Services/HeavyMachineLiftingAndShifting/Services/Skilled rigging and handling(1).JPG";
+import imgSkilledRiggingAndHandling from "../../../assets/Services/HeavyMachineLiftingAndShifting/Services/skilled rigging and handling.jpg";
+import imgTurnkeyMachineryShiftingSolutions from "../../../assets/Services/HeavyMachineLiftingAndShifting/Services/Turnkey machinery shifting solutions.jpg";
 
 function Services() {
   const servicesData = [
-    { img: serviceImg1, text: "24/7 emergency shifting support" },
-    { img: serviceImg2, text: "Heavy machinery loading & unloading" },
-    { img: serviceImg3, text: "Factory relocation services" },
-    { img: serviceImg4, text: "Precision equipment installation" },
-    { img: serviceImg5, text: "Industrial rigging solutions" },
-    { img: serviceImg1, text: "Safe transportation of heavy equipment" },
-    { img: serviceImg2, text: "On-site dismantling & reassembly" },
-    { img: serviceImg3, text: "Crane and forklift assistance" },
-    { img: serviceImg4, text: "Warehouse shifting services" },
-    { img: serviceImg5, text: "End-to-end project management" },
+    {
+      img: img24_7EmergencyShiftingSupport,
+      text: "24/7 emergency shifting support",
+    },
+    {
+      img: imgContainerStuffingDestuffingExpertise,
+      text: "Container Stuffing & de-stuffing expertise",
+    },
+    {
+      img: imgConternerStuffingExpertise,
+      text: "Conterner Stuffing expertise",
+    },
+    { img: imgCranesAndArrangment, text: "Cranes and arrangment" },
+    {
+      img: imgExpertiseInFactoryRelocationInternalPlantShifting,
+      text: "Expertise in factory relocation internal plant shifting",
+    },
+    {
+      img: imgForliftSupprtWithCertifiedOperators,
+      text: "Forlift supprt with certified operators",
+    },
+    {
+      img: imgHandlingCNCVMCInjectionMoldingMachinesAndHeavyPress,
+      text: "Handling CNC, VMC, Injection molding Machines and heavy press",
+    },
+    {
+      img: imgHandlingUpToMultiTonEquipment,
+      text: "Handling up to multi-ton equipment",
+    },
+    {
+      img: imgHeavyEquipmentPostioningWithMilimeterAccuracy,
+      text: "Heavy equipment postioning with milimeter accuracy",
+    },
+    {
+      img: imgInPlantMachineRearrangementLayoutShifting,
+      text: "In plant machine rearrangement & layout shifting",
+    },
+    {
+      img: imgLevelingAndAlignmentSupport,
+      text: "Leveling and alignment support",
+    },
+    {
+      img: imgProfessionalDismentalingServices,
+      text: "Professional dismentaling services",
+    },
+    {
+      img: imgProperMarkingAndPackingForReInstalling,
+      text: "Proper marking and packing for re-installing",
+    },
+    {
+      img: imgRiskAssessmnetAndMethodStatementPreparation,
+      text: "Risk assessmnet and method statement preparation",
+    },
+    {
+      img: imgSafeAndDamageFreeMovement,
+      text: "Safe and damage free movement",
+    },
+    {
+      img: imgSafeLiftingUpTo100TonCapacity,
+      text: "Safe lifting up to 100+ ton capacity",
+    },
+    {
+      img: imgSafeRemovalOfHeavyComponents,
+      text: "Safe removal of heavy components",
+    },
+    {
+      img: imgSafeUnlkoadingAtDestination,
+      text: "Safe unlkoading at destination",
+    },
+    {
+      img: imgSkilledManpowerWithPPEAndSaftyCompliance,
+      text: "Skilled manpower with PPE and safty compliance",
+    },
+    {
+      img: imgSkilledRiggingAndHandling1,
+      text: "Skilled rigging and handling",
+    },
+    { img: imgSkilledRiggingAndHandling, text: "Skilled rigging and handling" },
+    {
+      img: imgTurnkeyMachineryShiftingSolutions,
+      text: "Turnkey machinery shifting solutions",
+    },
   ];
 
   const visibleSlides = 4;

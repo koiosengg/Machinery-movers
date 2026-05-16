@@ -29,7 +29,7 @@ function Services() {
 
   const handleClick = (index) => {
     setActiveIndex(index);
-    startTimer(); // restart timer from clicked item
+    startTimer();
   };
 
   return (
@@ -42,34 +42,35 @@ function Services() {
         </p>
       </header>
 
-      <div className="services-services">
-        {/* TEXT */}
-        <div className="services-services-text">
-          {servicesText.map((text, index) => (
-            <h3
-              key={index}
-              className={
-                index === activeIndex ? "active-services-services" : ""
-              }
-              onClick={() => handleClick(index)}
-            >
-              {text}
-            </h3>
-          ))}
+      <div className="services-services services-services--split">
+        <div className="services-services-left">
+          <nav className="services-services-nav">
+            {servicesText.map((text, index) => (
+              <button
+                key={index}
+                className={index === activeIndex ? "is-active" : ""}
+                onClick={() => handleClick(index)}
+              >
+                {text}
+              </button>
+            ))}
+          </nav>
         </div>
 
-        {/* IMAGES */}
-        <div className="services-services-imgs">
-          {servicesImages.map((img, index) => (
-            <div
-              key={index}
-              className={`services-services-img ${
-                index === activeIndex ? "active-services-services-img" : ""
-              }`}
-            >
-              <img src={img} alt={`Services Image ${index + 1}`} />
-            </div>
-          ))}
+        <div className="services-services-right">
+          <div className="services-services-gallery">
+            {servicesImages.map((img, index) => (
+              <div
+                key={index}
+                className={`services-services-gallery-item ${
+                  index === activeIndex ? "is-active" : ""
+                }`}
+                onClick={() => handleClick(index)}
+              >
+                <img src={img} alt={`Services Image ${index + 1}`} />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

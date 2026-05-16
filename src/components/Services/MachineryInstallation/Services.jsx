@@ -2,6 +2,30 @@ import React, { useEffect, useRef, useState } from "react";
 import ServicesImage1 from "../../../assets/Services/MachineryInstallation/Services/Services Image 1.png";
 
 function Services() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const intervalRef = useRef(null);
+
+  const servicesText = ["Leveling & alignment support"];
+
+  const servicesImages = [ServicesImage1];
+
+  const startTimer = () => {
+    clearInterval(intervalRef.current);
+    intervalRef.current = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % servicesText.length);
+    }, 4000);
+  };
+
+  useEffect(() => {
+    startTimer();
+    return () => clearInterval(intervalRef.current);
+  }, []);
+
+  const handleClick = (index) => {
+    setActiveIndex(index);
+    startTimer();
+  };
+
   return (
     <section className="template blue-template">
       <header className="template-heading">
@@ -12,13 +36,34 @@ function Services() {
         </p>
       </header>
 
-      <div className="services-services">
-        <div className="services-services-text">
-          <h3 className="active-services-services">Leveling & alignment support</h3>
+      <div className="services-services services-services--split">
+        <div className="services-services-left">
+          <nav className="services-services-nav">
+            {servicesText.map((text, index) => (
+              <button
+                key={index}
+                className={index === activeIndex ? "is-active" : ""}
+                onClick={() => handleClick(index)}
+              >
+                {text}
+              </button>
+            ))}
+          </nav>
         </div>
-        <div className="services-services-imgs">
-          <div className="services-services-img active-services-services-img">
-            <img src={ServicesImage1} alt={`Services Image 1`} />
+
+        <div className="services-services-right">
+          <div className="services-services-gallery">
+            {servicesImages.map((img, index) => (
+              <div
+                key={index}
+                className={`services-services-gallery-item ${
+                  index === activeIndex ? "is-active" : ""
+                }`}
+                onClick={() => handleClick(index)}
+              >
+                <img src={img} alt={`Services Image ${index + 1}`} />
+              </div>
+            ))}
           </div>
         </div>
       </div>

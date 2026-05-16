@@ -1743,6 +1743,115 @@ html {
   text-transform: uppercase;
 }
 
+/* Services split layout (MachineryLoadingAndUnloading, MachineryInstallation, MachineryDismantling) */
+.services-services--split {
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.services-services-left {
+  flex: 1 1 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  min-width: 0;
+}
+
+.services-services-nav {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.services-services-nav button {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.35);
+  font-family: "Plus Jakarta Sans";
+  font-size: 16px;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+  padding: 18px 0;
+  text-align: left;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.services-services-nav button:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.services-services-nav button.is-active {
+  color: #fff;
+}
+
+.services-services-right {
+  flex: 1 1 55%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 0;
+}
+
+.services-services-gallery {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  height: 380px;
+  width: 100%;
+  gap: 4px;
+  overflow: hidden;
+}
+
+.services-services-gallery-item {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: flex 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  flex: 0 0 52px;
+  height: 100%;
+}
+
+.services-services-gallery-item.is-active {
+  flex: 1 1 auto;
+}
+
+.services-services-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
+  .services-services--split {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .services-services-gallery {
+    flex-direction: column;
+    height: 480px;
+    width: 100%;
+    gap: 2px;
+  }
+
+  .services-services-gallery-item {
+    flex: 0 0 28px;
+    width: 100%;
+    height: auto;
+  }
+
+  .services-services-gallery-item.is-active {
+    flex: 1 1 auto;
+  }
+}
+
 .blue-template .about-clients-left-controls button {
   border: 1px solid var(--White, #888888);
 }

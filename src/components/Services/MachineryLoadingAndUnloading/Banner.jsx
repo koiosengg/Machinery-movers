@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import GalleryImg1 from "../../../assets/Services/MachineryLoadingAndUnloading/Banner/Gallery Image 1.jpg";
+import BannerVideo from "../../../assets/Services/MachineryLoadingAndUnloading/Banner/MachineryLoadingAndUnloading.mp4";
 
 function Banner() {
   return (
@@ -17,7 +17,7 @@ function Banner() {
 
       <div className="home-banner-gallery">
         <div className="home-banner-gallery-slide">
-          <img src={GalleryImg1} alt=" Machinery Loading & Unloading" />
+          <video src={BannerVideo} autoPlay loop muted playsInline />
         </div>
       </div>
     </section>

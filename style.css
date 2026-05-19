@@ -3062,16 +3062,6 @@ footer {
     flex-direction: column;
   }
 
-  .services-services-slide {
-    overflow-y: scroll;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-
-  .services-services-slide::-webkit-scrollbar {
-    display: none;
-  }
-
   .services-services-set {
     width: 80%;
   }

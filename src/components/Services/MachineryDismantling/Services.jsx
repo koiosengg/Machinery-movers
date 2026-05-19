@@ -88,11 +88,17 @@ function Services() {
   }, [activeIndex, itemWidth]);
 
   useEffect(() => {
-    if (slidesCount <= 0 || windowWidth < 1200) return;
-    const timer = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % (slidesCount + 1));
+    if (slidesCount <= 0) return;
+    let intervalId;
+    const timeoutId = setTimeout(() => {
+      intervalId = setInterval(() => {
+        setActiveIndex((prev) => (prev + 1) % (slidesCount + 1));
+      }, 3000);
     }, 3000);
-    return () => clearInterval(timer);
+    return () => {
+      clearTimeout(timeoutId);
+      if (intervalId) clearInterval(intervalId);
+    };
   }, [slidesCount, windowWidth]);
 
   return (

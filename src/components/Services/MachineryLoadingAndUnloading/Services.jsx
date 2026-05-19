@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
-import ServicesImage1 from "../../../assets/Services/MachineryLoadingAndUnloading/Services/Services Image 1.png";
-import ServicesImage2 from "../../../assets/Services/MachineryLoadingAndUnloading/Services/Services Image 2.png";
-import ServicesImage3 from "../../../assets/Services/MachineryLoadingAndUnloading/Services/Services Image 3.png";
-import ServicesImage4 from "../../../assets/Services/MachineryLoadingAndUnloading/Services/Services Image 4.png";
+import ServicesImage1 from "../../../assets/Services/MachineryLoadingAndUnloading/Services/Cranes and arrangment.jpg";
+import ServicesImage2 from "../../../assets/Services/MachineryLoadingAndUnloading/Services/Handling up to multi-ton equipment.jpg";
+import ServicesImage3 from "../../../assets/Services/MachineryLoadingAndUnloading/Services/Professional loading & unloading team.jpg";
+import ServicesImage4 from "../../../assets/Services/MachineryLoadingAndUnloading/Services/safe unloading at destination.jpg";
 
 function Services() {
   const [activeIndex, setActiveIndex] = useState(0);

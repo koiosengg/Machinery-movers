@@ -17,7 +17,7 @@ import image15 from "../../../assets/Services/HeavyMachineLiftingAndShifting/Ser
 import image16 from "../../../assets/Services/HeavyMachineLiftingAndShifting/Services/Safe and damage free movement.jpg";
 import image17 from "../../../assets/Services/HeavyMachineLiftingAndShifting/Services/Safe lifting up to 100+ ton capacity.jpg";
 import image18 from "../../../assets/Services/HeavyMachineLiftingAndShifting/Services/Safe removal of heavy components.jpg";
-import image19 from "../../../assets/Services/HeavyMachineLiftingAndShifting/Services/safe unlkoading at destination.jpg";
+import image19 from "../../../assets/Services/HeavyMachineLiftingAndShifting/Services/safe unloading at destination.jpg";
 import image20 from "../../../assets/Services/HeavyMachineLiftingAndShifting/Services/Skilled manpower with PPE and safty compliance.jpg";
 import image21 from "../../../assets/Services/HeavyMachineLiftingAndShifting/Services/Skilled rigging and handling(1).JPG";
 import image22 from "../../../assets/Services/HeavyMachineLiftingAndShifting/Services/skilled rigging and handling.jpg";
@@ -43,57 +43,50 @@ function Services() {
     { img: image16, text: "Safe and damage free movement" },
     { img: image17, text: "Safe lifting up to 100+ ton capacity" },
     { img: image18, text: "Safe removal of heavy components" },
-    { img: image19, text: "Safe unlkoading at destination" },
+    { img: image19, text: "Safe unloading at destination" },
     { img: image20, text: "Skilled manpower with PPE and safty compliance" },
     { img: image21, text: "Skilled rigging and handling" },
     { img: image22, text: "Skilled rigging and handling" },
     { img: image23, text: "Turnkey machinery shifting solutions" },
   ];
 
-  const visibleSlides = 4;
-  const slidesCount = servicesData.length - visibleSlides;
-
   const [activeIndex, setActiveIndex] = useState(0);
-  const [slideWidth, setSlideWidth] = useState(0);
+  const [containerWidth, setContainerWidth] = useState(0);
+  const [itemWidth, setItemWidth] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const containerRef = useRef(null);
   const slideRef = useRef(null);
+  const firstSlideRef = useRef(null);
 
   useEffect(() => {
-    const updateWidth = () => {
-      if (!containerRef.current) return;
-
-      setSlideWidth(containerRef.current.getBoundingClientRect().width);
+    const updateDimensions = () => {
+      if (!containerRef.current || !firstSlideRef.current) return;
+      setContainerWidth(containerRef.current.getBoundingClientRect().width);
+      setItemWidth(firstSlideRef.current.getBoundingClientRect().width);
+      setWindowWidth(window.innerWidth);
     };
 
-    updateWidth();
-    window.addEventListener("resize", updateWidth);
-
-    return () => window.removeEventListener("resize", updateWidth);
+    updateDimensions();
+    window.addEventListener("resize", updateDimensions);
+    return () => window.removeEventListener("resize", updateDimensions);
   }, []);
 
+  const visibleCount = itemWidth > 0 ? Math.max(1, Math.round(containerWidth / itemWidth)) : 4;
+  const slidesCount = Math.max(0, servicesData.length - visibleCount);
+
   useEffect(() => {
-    if (!slideRef.current) return;
+    if (!slideRef.current || itemWidth === 0) return;
+    slideRef.current.style.transform = `translate3d(-${activeIndex * (itemWidth + 20)}px, 0, 0)`;
+  }, [activeIndex, itemWidth]);
 
-    slideRef.current.style.transform = `translate3d(-${
-      activeIndex * (slideWidth / 4 - 15 + 20)
-    }px, 0, 0)`;
-  }, [activeIndex, slideWidth]);
-
-  const isFirst = activeIndex === 0;
-  const isLast = activeIndex === slidesCount;
-
-  const handlePrev = () => {
-    if (!isFirst) {
-      setActiveIndex((prev) => prev - 1);
-    }
-  };
-
-  const handleNext = () => {
-    if (!isLast) {
-      setActiveIndex((prev) => prev + 1);
-    }
-  };
+  useEffect(() => {
+    if (slidesCount <= 0 || windowWidth < 1200) return;
+    const timer = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % (slidesCount + 1));
+    }, 3000);
+    return () => clearInterval(timer);
+  }, [slidesCount, windowWidth]);
 
   return (
     <section className="template blue-template">
@@ -109,92 +102,13 @@ function Services() {
       <div className="services-services" ref={containerRef}>
         <div className="services-services-slide" ref={slideRef}>
           {servicesData.map((item, index) => (
-            <article className="services-services-set" key={index}>
+            <article className="services-services-set" key={index} ref={index === 0 ? firstSlideRef : null}>
               <img src={item.img} alt={`service-${index}`} />
               <p>{item.text}</p>
             </article>
           ))}
         </div>
-        <div className="about-clients-left-controls">
-          <button
-            onClick={!isFirst ? handlePrev : undefined}
-            style={{
-              opacity: isFirst ? 0.3 : 1,
-              cursor: isFirst ? "default" : "pointer",
-              pointerEvents: isFirst ? "none" : "auto",
-            }}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-              fill="none"
-            >
-              <mask
-                id="mask0_583_3864"
-                style={{ maskType: "alpha" }}
-                maskUnits="userSpaceOnUse"
-                x="0"
-                y="0"
-                width="20"
-                height="20"
-              >
-                <rect
-                  width="20"
-                  height="20"
-                  transform="matrix(-1 0 0 1 20 0)"
-                  fill="#D9D9D9"
-                />
-              </mask>
-              <g mask="url(#mask0_583_3864)">
-                <path
-                  d="M12.9834 16.6666L14.1667 15.4833L8.68341 9.99992L14.1667 4.51659L12.9834 3.33325L6.31675 9.99992L12.9834 16.6666Z"
-                  fill="#030F27"
-                />
-              </g>
-            </svg>
-          </button>
-          <button
-            onClick={!isLast ? handleNext : undefined}
-            style={{
-              opacity: isLast ? 0.3 : 1,
-              cursor: isLast ? "default" : "pointer",
-              pointerEvents: isLast ? "none" : "auto",
-            }}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-              fill="none"
-            >
-              <mask
-                id="mask0_583_3864"
-                style={{ maskType: "alpha" }}
-                maskUnits="userSpaceOnUse"
-                x="0"
-                y="0"
-                width="20"
-                height="20"
-              >
-                <rect
-                  width="20"
-                  height="20"
-                  transform="matrix(-1 0 0 1 20 0)"
-                  fill="#D9D9D9"
-                />
-              </mask>
-              <g mask="url(#mask0_583_3864)">
-                <path
-                  d="M12.9834 16.6666L14.1667 15.4833L8.68341 9.99992L14.1667 4.51659L12.9834 3.33325L6.31675 9.99992L12.9834 16.6666Z"
-                  fill="#030F27"
-                />
-              </g>
-            </svg>
-          </button>
-        </div>
+
       </div>
     </section>
   );

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import ServicesImage1 from "../../../assets/Services/MachineryInstallation/Services/Services Image 1.png";
+import ServicesImage1 from "../../../assets/Services/MachineryInstallation/Services/Services Image 1.jpg";
 
 function Services() {
   const [activeIndex, setActiveIndex] = useState(0);

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
-import ServicesImage1 from "../../../assets/Services/MachineryDismantling/Services/Services Image 1.png";
-import ServicesImage2 from "../../../assets/Services/MachineryDismantling/Services/Services Image 2.png";
-import ServicesImage3 from "../../../assets/Services/MachineryDismantling/Services/Services Image 3.png";
+import ServicesImage1 from "../../../assets/Services/MachineryDismantling/Services/Professional dismentaling services.jpg";
+import ServicesImage2 from "../../../assets/Services/MachineryDismantling/Services/Proper marking and packing for re-installing.jpg";
+import ServicesImage3 from "../../../assets/Services/MachineryDismantling/Services/Safe removal of heavy components.jpg";
 
 function Services() {
   const [activeIndex, setActiveIndex] = useState(0);

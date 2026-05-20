@@ -147,11 +147,9 @@ html {
   transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    0deg,
-    rgba(3, 15, 39, 0.2) 0%,
-    rgba(3, 15, 39, 0.2) 100%
-  );
+  background: linear-gradient(0deg,
+      rgba(3, 15, 39, 0.2) 0%,
+      rgba(3, 15, 39, 0.2) 100%);
   opacity: 0;
   z-index: 1;
   transition: all 0.3s;
@@ -1102,6 +1100,7 @@ html {
   from {
     transform: translateY(5px) rotate(0deg);
   }
+
   to {
     transform: translateY(5px) rotate(360deg);
   }
@@ -1138,12 +1137,8 @@ html {
 /* Projects Banner Overlay */
 
 .projects-banner-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
   width: 100%;
-  z-index: 2;
-  padding: 0 160px 22px 160px;
+  padding: 160px 160px 80px 160px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1157,7 +1152,6 @@ html {
   overflow: visible;
   height: 139px;
   width: 100%;
-  max-width: 950px;
 }
 
 .projects-award {
@@ -1166,7 +1160,8 @@ html {
   align-items: center;
   justify-content: center;
   position: relative;
-  width: 168.697px; /* width of image + padding */
+  width: 168.697px;
+  /* width of image + padding */
   height: 100%;
 }
 
@@ -1214,78 +1209,6 @@ html {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-}
-
-/* Projects Banner Overlay - Responsive */
-
-@media screen and (max-width: 1280px) {
-  .projects-banner-overlay {
-    padding: 0 80px 22px 80px;
-  }
-}
-
-@media screen and (max-width: 1200px) {
-  .projects-banner-overlay {
-    padding: 0 40px 16px 40px;
-  }
-  .projects-banner-box {
-    flex-direction: column;
-    height: auto;
-    padding-bottom: 24px;
-    gap: 0;
-    width: 100%;
-    max-width: 100%;
-  }
-  .projects-award {
-    width: 100%;
-    height: 80px;
-    display: flex;
-    justify-content: center;
-    position: relative;
-  }
-  .projects-award img {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: auto;
-    top: -60px;
-  }
-  .projects-content {
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 0 32px 0 32px;
-    gap: 32px;
-    width: 100%;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .projects-banner-overlay {
-    padding: 0 0 0 0;
-  }
-  .projects-banner-box {
-    padding-bottom: 20px;
-  }
-  .projects-award {
-    height: 80px;
-  }
-  .projects-award img {
-    width: 110px;
-    height: 146px;
-    top: -70px;
-  }
-  .projects-content {
-    padding: 0 20px 0 20px;
-    gap: 20px;
-  }
-  .projects-vision h3,
-  .projects-trust h3 {
-    font-size: 16px;
-  }
-  .projects-vision p,
-  .projects-trust p {
-    font-size: 13px;
-  }
 }
 
 .about-numbers {
@@ -1743,18 +1666,6 @@ html {
   text-transform: uppercase;
 }
 
-@media screen and (max-width: 1200px) {
-  .services-services-set {
-    width: calc(100% / 3 - 14px);
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .services-services-set {
-    width: 80%;
-  }
-}
-
 /* Services split layout (MachineryLoadingAndUnloading, MachineryInstallation, MachineryDismantling) */
 .services-services--split {
   flex-direction: row;
@@ -1838,30 +1749,6 @@ html {
   height: 100%;
   object-fit: cover;
   display: block;
-}
-
-@media screen and (max-width: 768px) {
-  .services-services--split {
-    flex-direction: column;
-    gap: 32px;
-  }
-
-  .services-services-gallery {
-    flex-direction: column;
-    height: 480px;
-    width: 100%;
-    gap: 2px;
-  }
-
-  .services-services-gallery-item {
-    flex: 0 0 28px;
-    width: 100%;
-    height: auto;
-  }
-
-  .services-services-gallery-item.is-active {
-    flex: 1 1 auto;
-  }
 }
 
 .blue-template .about-clients-left-controls button {
@@ -2210,12 +2097,10 @@ footer {
   flex-direction: column;
   gap: 120px;
   padding: 80px 160px;
-  background: radial-gradient(
-    circle at 50% 100%,
-    #1b4db3 0%,
-    #143a8a 0%,
-    #030f27 70%
-  );
+  background: radial-gradient(circle at 50% 100%,
+      #1b4db3 0%,
+      #143a8a 0%,
+      #030f27 70%);
 }
 
 .newsletter {
@@ -2471,6 +2356,49 @@ footer {
 }
 
 @media screen and (max-width: 1200px) {
+  .projects-banner-overlay {
+    padding: 64px 20px;
+  }
+
+  .projects-banner-box {
+    flex-direction: column;
+    height: auto;
+    padding-bottom: 0px;
+    gap: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .projects-award {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+
+  .projects-award img {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: auto;
+    top: -60px;
+    width: 120px;
+    height: 160px;
+  }
+
+  .projects-content {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0 32px 0 32px;
+    gap: 32px;
+    width: 100%;
+  }
+
+  .services-services-set {
+    width: calc(100% / 3 - 14px);
+  }
+
   .mobile {
     display: flex;
   }
@@ -2968,22 +2896,17 @@ footer {
 
   /* Projects */
 
-  .projects-banner-overlay {
-    padding: 0 20px 16px 20px;
-  }
+
 
   .projects-banner-box {
     width: 100%;
   }
 
-  .projects-award img {
-    width: 120px;
-    height: 160px;
-  }
+
 
   .projects-content {
     flex-direction: row;
-    padding: 0 20px 0 20px;
+    padding: 20px;
     gap: 20px;
   }
 
@@ -2996,6 +2919,7 @@ footer {
   .projects-trust p {
     font-size: 12px;
   }
+
   .projects-case-set-heading {
     flex-direction: column;
     align-items: flex-start;
@@ -3264,6 +3188,62 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
+  .projects-content {
+    flex-direction: column;
+  }
+
+
+  .projects-award {
+    height: 80px;
+  }
+
+  .projects-award img {
+    width: 110px;
+    height: 146px;
+  }
+
+  .projects-content {
+    flex-direction: row;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .projects-vision h3,
+  .projects-trust h3 {
+    font-size: 16px;
+  }
+
+  .projects-vision p,
+  .projects-trust p {
+    font-size: 13px;
+  }
+
+  .services-services-set {
+    width: 80%;
+  }
+
+  .services-services--split {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .services-services-gallery {
+    flex-direction: column;
+    height: 480px;
+    width: 100%;
+    gap: 2px;
+  }
+
+  .services-services-gallery-item {
+    flex: 0 0 28px;
+    width: 100%;
+    height: auto;
+  }
+
+  .services-services-gallery-item.is-active {
+    flex: 1 1 auto;
+  }
+
   .home-banner-youtube {
     display: none;
   }

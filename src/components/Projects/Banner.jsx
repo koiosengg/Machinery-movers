@@ -1,6 +1,5 @@
 import React from "react";
 import ProjectBanner from "../../assets/Projects/Banner/Projects Video.mp4";
-import AwardImage from "../../assets/Projects/Tata/Image.png";
 
 function Banner() {
   return (
@@ -17,7 +16,6 @@ function Banner() {
           expertise
         </p>
       </header>
-
       <div className="home-banner-gallery">
         <div className="home-banner-gallery-slide">
           <video
@@ -28,30 +26,6 @@ function Banner() {
             src={ProjectBanner}
             type="video/mp4"
           />
-        </div>
-
-        <div className="projects-banner-overlay">
-          <div className="projects-banner-box">
-            <div className="projects-award">
-              <img src={AwardImage} alt="Tata Power Solar Award" />
-            </div>
-            <div className="projects-content">
-              <div className="projects-vision">
-                <h3>Our Vision</h3>
-                <p>
-                  To be the preferred provider of lifting solutions, setting
-                  standards for a more sustainable future.
-                </p>
-              </div>
-              <div className="projects-trust">
-                <h3>Trust</h3>
-                <p>
-                  Our clients trust us to achieve impossible feats, consistently
-                  breaking records through dedication and innovation.
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>

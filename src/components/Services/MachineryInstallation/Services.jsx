@@ -106,8 +106,7 @@ function Services() {
       <header className="template-heading">
         <h2>Our Services</h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur. At et consequat nunc nullam.
-          Mattis ac arcu sodales id quam urna.
+          Comprehensive industrial machinery shifting, heavy lifting, and relocation services across South India and pan-India manufacturing hubs
         </p>
       </header>
 

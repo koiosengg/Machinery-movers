@@ -21,6 +21,7 @@ function BTS() {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; compute-pressure"
             referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen
+            loading="lazy"
           ></iframe>
           <div className="home-bts-set-text">
             <h3>
@@ -44,6 +45,7 @@ function BTS() {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; compute-pressure"
             referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen
+            loading="lazy"
           ></iframe>
           <div className="home-bts-set-text">
             <h3>
@@ -67,6 +69,7 @@ function BTS() {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; compute-pressure"
             referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen
+            loading="lazy"
           ></iframe>
           <div className="home-bts-set-text">
             <h3>Moving Machine (10 ton) with Floor protection</h3>
@@ -87,6 +90,7 @@ function BTS() {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; compute-pressure"
             referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen
+            loading="lazy"
           ></iframe>
           <div className="home-bts-set-text">
             <h3>Moving machine (5ton) using jacks and rollers</h3>

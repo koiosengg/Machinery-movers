@@ -72,8 +72,7 @@ function Banner() {
         <div className="home-banner-gallery-slide" style={slideStyle}>
           {galleryData.map((item, index) => {
             const isActive = index === currentIndex;
-            const isAdjacent = Math.abs(index - currentIndex) === 1;
-            const videoSrc = (isActive || isAdjacent) ? item.img : undefined;
+            const videoSrc = isActive ? item.img : undefined;
             return (
               <video
                 key={index}
@@ -82,7 +81,7 @@ function Banner() {
                 loop
                 muted
                 playsInline
-                preload={isActive ? "auto" : (isAdjacent ? "metadata" : "none")}
+                preload={isActive ? "auto" : "none"}
               />
             );
           })}

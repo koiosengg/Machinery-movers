@@ -147,16 +147,14 @@ html {
   transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
-  background: linear-gradient(0deg,
-      rgba(3, 15, 39, 0.2) 0%,
-      rgba(3, 15, 39, 0.2) 100%);
+  background: linear-gradient(
+    0deg,
+    rgba(3, 15, 39, 0.2) 0%,
+    rgba(3, 15, 39, 0.2) 100%
+  );
   opacity: 0;
   z-index: 1;
   transition: all 0.3s;
-}
-
-.blue-overlay:hover::before {
-  opacity: 1;
 }
 
 /* Navbar */
@@ -2097,10 +2095,12 @@ footer {
   flex-direction: column;
   gap: 120px;
   padding: 80px 160px;
-  background: radial-gradient(circle at 50% 100%,
-      #1b4db3 0%,
-      #143a8a 0%,
-      #030f27 70%);
+  background: radial-gradient(
+    circle at 50% 100%,
+    #1b4db3 0%,
+    #143a8a 0%,
+    #030f27 70%
+  );
 }
 
 .newsletter {
@@ -2896,13 +2896,9 @@ footer {
 
   /* Projects */
 
-
-
   .projects-banner-box {
     width: 100%;
   }
-
-
 
   .projects-content {
     flex-direction: row;
@@ -3191,7 +3187,6 @@ footer {
   .projects-content {
     flex-direction: column;
   }
-
 
   .projects-award {
     height: 80px;

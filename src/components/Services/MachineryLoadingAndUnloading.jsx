@@ -1,4 +1,5 @@
 import React from "react";
+import SEO from "../SEO";
 import Banner from "./MachineryLoadingAndUnloading/Banner";
 import Sectors from "./HeavyMachineLiftingAndShifting/Sectors";
 import Services from "./MachineryLoadingAndUnloading/Services";
@@ -18,6 +19,10 @@ import Ready from "../Home/Ready";
 function MachineryLoadingAndUnloading() {
   return (
     <>
+      <SEO
+        title="Machinery Loading & Unloading Services | Machinery Movers"
+        description="Safe and efficient machinery loading and unloading services. Specialized rigging, crane handling, and secure container stuffing across India."
+      />
       <Banner />
       <Sectors />
       <Services />

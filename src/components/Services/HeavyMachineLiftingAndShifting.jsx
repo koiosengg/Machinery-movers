@@ -1,4 +1,5 @@
 import React from "react";
+import SEO from "../SEO";
 import Banner from "./HeavyMachineLiftingAndShifting/Banner";
 import Sectors from "./HeavyMachineLiftingAndShifting/Sectors";
 import Services from "./HeavyMachineLiftingAndShifting/Services";
@@ -18,6 +19,10 @@ import Ready from "../Home/Ready";
 function HeavyMachineLiftingAndShifting() {
   return (
     <>
+      <SEO
+        title="Heavy Machinery Relocation Services India | Machinery Movers"
+        description="Expert heavy machinery relocation for factories and plants across India. Rigging, loading, and reinstallation handled end-to-end. Request a quote today."
+      />
       <Banner />
       <Sectors />
       <Services />

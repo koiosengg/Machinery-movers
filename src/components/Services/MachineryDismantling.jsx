@@ -1,4 +1,5 @@
 import React from "react";
+import SEO from "../SEO";
 import Banner from "./MachineryDismantling/Banner";
 import Services from "./MachineryDismantling/Services";
 import Sectors from "./HeavyMachineLiftingAndShifting/Sectors";
@@ -18,6 +19,10 @@ import Ready from "../Home/Ready";
 function MachineryDismantling() {
   return (
     <>
+      <SEO
+        title="Machinery Dismantling & Decommissioning | Machinery Movers"
+        description="Safe machinery dismantling, decommissioning, and match-marking services. We prepare heavy industrial machinery for secure transport and relocation."
+      />
       <Banner />
       <Sectors />
       <Services />

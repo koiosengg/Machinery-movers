@@ -1,9 +1,14 @@
 import React from "react";
+import SEO from "./SEO";
 import Ready from "./Home/Ready";
 
 function Contact() {
   return (
     <>
+      <SEO
+        title="Get a Free Quote | Machinery Movers India"
+        description="Planning a machinery or plant relocation? Contact Machinery Movers for a free, fast quote and a project plan built around minimal downtime."
+      />
       <section className="home-banner contact-banner">
         <header>
           <h1>

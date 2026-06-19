@@ -1,4 +1,5 @@
 import React from "react";
+import SEO from "./SEO";
 import Numbers from "./About/Numbers";
 import Company from "./About/Company";
 import Proprietor from "./About/Proprietor";
@@ -13,6 +14,10 @@ import Hero from "./About/Hero";
 function About() {
   return (
     <>
+      <SEO
+        title="About Machinery Movers | Industrial Relocation Experts"
+        description="Learn about Machinery Movers' experience, licenses, insurance, and track record relocating heavy industrial machinery and plants safely across India."
+      />
       <Hero />
       <Numbers />
       <Proprietor />

@@ -1,4 +1,5 @@
 import React from "react";
+import SEO from "../SEO";
 import Banner from "./MachineryInstallation/Banner";
 import Sectors from "./HeavyMachineLiftingAndShifting/Sectors";
 import Services from "./MachineryInstallation/Services";
@@ -18,6 +19,10 @@ import Ready from "../Home/Ready";
 function MachineryInstallation() {
   return (
     <>
+      <SEO
+        title="Industrial Machinery Installation Services | Machinery Movers"
+        description="Expert industrial machinery installation, leveling, alignment, and commissioning. End-to-end relocation and setup for factory machinery in India."
+      />
       <Banner />
       <Sectors />
       <Services />

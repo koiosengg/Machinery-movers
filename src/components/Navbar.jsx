@@ -50,16 +50,16 @@ function Navbar() {
             </svg>
           </div>
           <div className="navbar-link-dropdown">
-            <Link to="services/heavy-machine-lifting-and-shifting">
+            <Link to="/services/heavy-machine-lifting-and-shifting">
               Heavy Machine Lifting & Shifting
             </Link>
-            <Link to="services/machinery-loading-and-unloading">
+            <Link to="/services/machinery-loading-and-unloading">
               Machinery Loading & Unloading
             </Link>
-            <Link to="services/machinery-installation">
+            <Link to="/services/machinery-installation">
               Machinery Installation
             </Link>
-            <Link to="services/machinery-dismantling">
+            <Link to="/services/machinery-dismantling">
               Machinery Dismantling
             </Link>
           </div>
@@ -168,25 +168,25 @@ function Navbar() {
             </div>
             <div className="navbar-link-dropdown">
               <Link
-                to="services/heavy-machine-lifting-and-shifting"
+                to="/services/heavy-machine-lifting-and-shifting"
                 onClick={handleLinkClick}
               >
                 Heavy Machine Lifting & Shifting
               </Link>
               <Link
-                to="services/machinery-loading-and-unloading"
+                to="/services/machinery-loading-and-unloading"
                 onClick={handleLinkClick}
               >
                 Machinery Loading & Unloading
               </Link>
               <Link
-                to="services/machinery-installation"
+                to="/services/machinery-installation"
                 onClick={handleLinkClick}
               >
                 Machinery Installation
               </Link>
               <Link
-                to="services/machinery-dismantling"
+                to="/services/machinery-dismantling"
                 onClick={handleLinkClick}
               >
                 Machinery Dismantling

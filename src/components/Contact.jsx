@@ -1,5 +1,6 @@
 import React from "react";
 import SEO from "./SEO";
+import { ContactPageStructuredData } from "../structured-data";
 import Ready from "./Home/Ready";
 
 function Contact() {
@@ -9,6 +10,7 @@ function Contact() {
         title="Get a Free Quote | Machinery Movers India"
         description="Planning a machinery or plant relocation? Contact Machinery Movers for a free, fast quote and a project plan built around minimal downtime."
       />
+      <ContactPageStructuredData />
       <section className="home-banner contact-banner">
         <header>
           <h1>

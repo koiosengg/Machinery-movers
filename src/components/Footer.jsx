@@ -64,7 +64,7 @@ function Footer() {
       <div className="footer">
         <div className="footer-top">
           <div className="footer-top-left">
-            <img src={Logo} alt="Company Logo" />
+            <img decoding="async" loading="lazy" src={Logo} alt="Company Logo" />
             <p>
               Lifting the Impossible
               <br className="desktop" /> Since 1999.
@@ -83,10 +83,10 @@ function Footer() {
             <div className="footer-top-right-links">
               <h3>Services</h3>
               <nav>
-                <Link to="/">Heavy Machine Lifting & Shifting</Link>
-                <Link to="/about">Machinery Installation</Link>
-                <Link to="/projects">Machinery Dismantling</Link>
-                <Link to="/contact">Packing Services</Link>
+                <Link to="/services/heavy-machine-lifting-and-shifting">Heavy Machine Lifting & Shifting</Link>
+                <Link to="/services/machinery-loading-and-unloading">Machinery Loading & Unloading</Link>
+                <Link to="/services/machinery-installation">Machinery Installation</Link>
+                <Link to="/services/machinery-dismantling">Machinery Dismantling</Link>
               </nav>
             </div>
             <div className="footer-top-right-links">
@@ -106,18 +106,18 @@ function Footer() {
                 <article>
                   <label>Call us</label>
                   <div className="contact-number">
-                    <a href="#" target="_blank">
+                    <a href="tel:+919980335552">
                       +91 9980335552
                     </a>{" "}
                     <a>/</a>{" "}
-                    <a href="#" target="_blank">
+                    <a href="tel:+919448263309">
                       +91 9448263309
                     </a>
                   </div>
                 </article>
                 <article>
                   <label>Reach out to us</label>
-                  <a href="#" target="_blank">
+                  <a href="mailto:chinnappa@machinerymovers.co.in">
                     chinnappa@machinerymovers.co.in
                   </a>
                 </article>

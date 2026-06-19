@@ -11,7 +11,7 @@ function Tata() {
         </p>
       </header>
       <div className="projects-tata-img">
-        <img src={Image} alt="TATA Safety Achievement Award" />
+        <img decoding="async" loading="lazy" src={Image} alt="TATA Safety Achievement Award" />
       </div>
     </section>
   );

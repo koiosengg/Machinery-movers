@@ -22,8 +22,7 @@ function Clients() {
     return (
       <>
         {logosSlice.map((logo, index) => (
-          <img
-            key={`logo-${startIndex + index}`}
+          <img decoding="async" loading="lazy" key={`logo-${startIndex + index}`}
             src={logo}
             alt={`Client Logo ${startIndex + index + 1}`}
           />

@@ -4,8 +4,8 @@ import Image1 from "../../../assets/Projects/Case/CIE/Image 1.jpg";
 import Image2 from "../../../assets/Projects/Case/CIE/Image 2.jpg";
 import Image3 from "../../../assets/Projects/Case/CIE/Image 3.jpg";
 import Image4 from "../../../assets/Projects/Case/CIE/Image 4.jpg";
-import Image5 from "../../../assets/Projects/Case/CIE/Image 5.png";
-import Image6 from "../../../assets/Projects/Case/CIE/Image 6.png";
+import Image5 from "../../../assets/Projects/Case/CIE/Image 5.jpg";
+import Image6 from "../../../assets/Projects/Case/CIE/Image 6.jpg";
 import Image7 from "../../../assets/Projects/Case/CIE/Image 7.jpg";
 import Image8 from "../../../assets/Projects/Case/CIE/Image 8.jpg";
 import Image9 from "../../../assets/Projects/Case/CIE/Image 9.jpg";
@@ -63,7 +63,7 @@ function CIE() {
   return (
     <article className="projects-case-set">
       <div className="projects-case-set-heading">
-        <img src={Logo} alt="CIE LIMITED Logo" />
+        <img decoding="async" loading="lazy" src={Logo} alt="CIE LIMITED Logo" />
         <h3>CIE LIMITED</h3>
       </div>
 
@@ -71,7 +71,7 @@ function CIE() {
         <div className="projects-case-set-imgs" ref={containerRef}>
           <div className="projects-case-set-imgs-slide" ref={slideRef}>
             {images.map((img, index) => (
-              <img key={index} src={img} alt="CIE Image" />
+              <img decoding="async" loading="lazy" key={index} src={img} alt="CIE Image" />
             ))}
           </div>
           <button

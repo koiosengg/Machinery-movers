@@ -51,7 +51,7 @@ function Barani() {
   return (
     <article className="projects-case-set">
       <div className="projects-case-set-heading">
-        <img src={Logo} alt="Barani Hydraulics India Private Limited Logo" />
+        <img decoding="async" loading="lazy" src={Logo} alt="Barani Hydraulics India Private Limited Logo" />
         <h3>Barani Hydraulics India Private Limited</h3>
       </div>
 
@@ -59,8 +59,7 @@ function Barani() {
         <div className="projects-case-set-imgs" ref={containerRef}>
           <div className="projects-case-set-imgs-slide" ref={slideRef}>
             {images.map((img, index) => (
-              <img
-                key={index}
+              <img decoding="async" loading="lazy" key={index}
                 src={img}
                 alt="Barani Hydraulics India Private Limited Image"
               />

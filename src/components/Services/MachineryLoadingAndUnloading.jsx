@@ -1,5 +1,6 @@
 import React from "react";
 import SEO from "../SEO";
+import { MachineryLoadingAndUnloadingStructuredData } from "../../structured-data";
 import Banner from "./MachineryLoadingAndUnloading/Banner";
 import Sectors from "./HeavyMachineLiftingAndShifting/Sectors";
 import Services from "./MachineryLoadingAndUnloading/Services";
@@ -23,6 +24,7 @@ function MachineryLoadingAndUnloading() {
         title="Machinery Loading & Unloading Services | Machinery Movers"
         description="Safe and efficient machinery loading and unloading services. Specialized rigging, crane handling, and secure container stuffing across India."
       />
+      <MachineryLoadingAndUnloadingStructuredData />
       <Banner />
       <Sectors />
       <Services />

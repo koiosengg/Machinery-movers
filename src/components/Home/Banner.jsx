@@ -31,15 +31,16 @@ function Banner() {
   const [galleryWidth, setGalleryWidth] = useState(0);
 
   useEffect(() => {
-    const updateWidth = () => {
-      if (galleryRef.current) {
-        setGalleryWidth(galleryRef.current.offsetWidth);
-      }
-    };
+    if (!galleryRef.current) return;
 
-    updateWidth();
-    window.addEventListener("resize", updateWidth);
-    return () => window.removeEventListener("resize", updateWidth);
+    const observer = new ResizeObserver((entries) => {
+      for (let entry of entries) {
+        setGalleryWidth(entry.contentRect.width);
+      }
+    });
+
+    observer.observe(galleryRef.current);
+    return () => observer.disconnect();
   }, []);
 
   const slideStyle = {
@@ -59,8 +60,8 @@ function Banner() {
     <section className="home-banner">
       <header>
         <h1>
-          Heavy Lifting Solutions
-          <br className="desktop" /> for Every Industry
+          Heavy Machinery Moving &
+          <br className="desktop" /> Industrial Relocation Services
         </h1>
         <p>
           South India’s complete service partner for container loading, machine

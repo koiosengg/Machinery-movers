@@ -5,7 +5,7 @@ function VisionMission() {
     <div className="projects-banner-overlay">
       <div className="projects-banner-box">
         <div className="projects-award">
-          <img src={AwardImage} alt="Tata Power Solar Award" />
+          <img decoding="async" loading="lazy" src={AwardImage} alt="Tata Power Solar Award" />
         </div>
         <div className="projects-content">
           <div className="projects-vision">

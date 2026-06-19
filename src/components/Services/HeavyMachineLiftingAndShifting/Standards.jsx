@@ -1,6 +1,6 @@
 import React from "react";
-import PF from "../../../assets/Services/HeavyMachineLiftingAndShifting/Standards/PF.png";
-import ESIC from "../../../assets/Services/HeavyMachineLiftingAndShifting/Standards/ESIC.png";
+import PF from "../../../assets/Services/HeavyMachineLiftingAndShifting/Standards/PF.jpg";
+import ESIC from "../../../assets/Services/HeavyMachineLiftingAndShifting/Standards/ESIC.jpg";
 
 function Standards() {
   return (
@@ -22,15 +22,13 @@ function Standards() {
           smooth, risk-free operations every time.
         </p>
         <article className="services-standards-set">
-          <img
-            src={PF}
+          <img decoding="async" loading="lazy" src={PF}
             alt="Employee’s Provident Fund of India (PF Compliance)"
           />
           <h3>Employee’s Provident Fund of India (PF Compliance)</h3>
         </article>
         <article className="services-standards-set">
-          <img
-            src={ESIC}
+          <img decoding="async" loading="lazy" src={ESIC}
             alt="Employee’s State Insurance Corporation Scheme (ESIC)"
           />
           <h3>Employee’s State Insurance Corporation Scheme (ESIC)</h3>

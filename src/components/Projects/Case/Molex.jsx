@@ -49,7 +49,7 @@ function Molex() {
   return (
     <article className="projects-case-set">
       <div className="projects-case-set-heading">
-        <img src={Logo} alt="Molex Logo" />
+        <img decoding="async" loading="lazy" src={Logo} alt="Molex Logo" />
         <h3>Molex</h3>
       </div>
 
@@ -57,7 +57,7 @@ function Molex() {
         <div className="projects-case-set-imgs" ref={containerRef}>
           <div className="projects-case-set-imgs-slide" ref={slideRef}>
             {images.map((img, index) => (
-              <img key={index} src={img} alt="Molex Image" />
+              <img decoding="async" loading="lazy" key={index} src={img} alt="Molex Image" />
             ))}
           </div>
 

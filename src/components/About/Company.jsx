@@ -1,5 +1,5 @@
 import React from "react";
-import AboutImage from "../../assets/About/Company/Image.png";
+import AboutImage from "../../assets/About/Company/Image.jpg";
 
 function Company() {
   return (
@@ -39,7 +39,7 @@ function Company() {
         </div>
       </div>
       <div className="home-about-img blue-overlay">
-        <img src={AboutImage} alt="About Image" className="blue-hover" />
+        <img decoding="async" loading="lazy" src={AboutImage} alt="About Image" className="blue-hover" />
       </div>
     </section>
   );

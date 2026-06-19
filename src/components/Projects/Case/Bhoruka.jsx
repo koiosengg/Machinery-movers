@@ -51,7 +51,7 @@ function Bhoruka() {
   return (
     <article className="projects-case-set">
       <div className="projects-case-set-heading">
-        <img src={Logo} alt="Bhoruka Extrusions Pvt. Ltd. Logo" />
+        <img decoding="async" loading="lazy" src={Logo} alt="Bhoruka Extrusions Pvt. Ltd. Logo" />
         <h3>Bhoruka Extrusions Pvt. Ltd.</h3>
       </div>
 
@@ -59,8 +59,7 @@ function Bhoruka() {
         <div className="projects-case-set-imgs" ref={containerRef}>
           <div className="projects-case-set-imgs-slide" ref={slideRef}>
             {images.map((img, index) => (
-              <img
-                key={index}
+              <img decoding="async" loading="lazy" key={index}
                 src={img}
                 alt="Bhoruka Extrusions Pvt. Ltd. Image"
               />

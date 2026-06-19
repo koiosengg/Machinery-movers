@@ -1,5 +1,5 @@
 import React from "react";
-import ProprietorImage from "../../assets/About/Proprietor/Proprietor.png";
+import ProprietorImage from "../../assets/About/Proprietor/Proprietor.jpg";
 
 function Proprietor() {
   return (
@@ -19,7 +19,7 @@ function Proprietor() {
         </div>
       </div>
       <div className="home-about-img blue-overlay">
-        <img src={ProprietorImage} alt="Proprietor" className="blue-hover" />
+        <img decoding="async" loading="lazy" src={ProprietorImage} alt="Proprietor" className="blue-hover" />
       </div>
     </section>
   );

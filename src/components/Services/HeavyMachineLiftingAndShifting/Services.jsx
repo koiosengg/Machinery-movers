@@ -103,7 +103,7 @@ function Services() {
         <div className="services-services-slide" ref={slideRef}>
           {servicesData.map((item, index) => (
             <article className="services-services-set" key={index} ref={index === 0 ? firstSlideRef : null}>
-              <img src={item.img} alt={`service-${index}`} />
+              <img decoding="async" loading="lazy" src={item.img} alt={item.text} />
               <p>{item.text}</p>
             </article>
           ))}

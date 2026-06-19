@@ -1,5 +1,6 @@
 import React from "react";
-import AboutImage from "../../assets/Home/About/Image.png";
+import { Link } from "react-router-dom";
+import AboutImage from "../../assets/Home/About/Image.jpg";
 
 function About() {
   return (
@@ -15,7 +16,7 @@ function About() {
             our manual labour using sophisticated equipment in many of the
             reputed factories in and around Karnataka State
           </p>
-          <a href="#" className="secondary-button">
+          <Link to="/about" className="secondary-button">
             <p>Read More</p>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -42,11 +43,11 @@ function About() {
                 />
               </g>
             </svg>
-          </a>
+          </Link>
         </div>
       </div>
       <div className="home-about-img blue-overlay">
-        <img src={AboutImage} alt="About Image" className="blue-hover" />
+        <img decoding="async" loading="lazy" src={AboutImage} alt="About Image" className="blue-hover" />
       </div>
     </section>
   );

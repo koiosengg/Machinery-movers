@@ -1,5 +1,6 @@
 import React from "react";
 import SEO from "../SEO";
+import { MachineryDismantlingStructuredData } from "../../structured-data";
 import Banner from "./MachineryDismantling/Banner";
 import Services from "./MachineryDismantling/Services";
 import Sectors from "./HeavyMachineLiftingAndShifting/Sectors";
@@ -23,6 +24,7 @@ function MachineryDismantling() {
         title="Machinery Dismantling & Decommissioning | Machinery Movers"
         description="Safe machinery dismantling, decommissioning, and match-marking services. We prepare heavy industrial machinery for secure transport and relocation."
       />
+      <MachineryDismantlingStructuredData />
       <Banner />
       <Sectors />
       <Services />

@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import Logo from "../../../assets/Projects/Case/SJS/Logo.png";
 import Image1 from "../../../assets/Projects/Case/SJS/Image 1.jpg";
-import Image2 from "../../../assets/Projects/Case/SJS/Image 2.png";
-import Image3 from "../../../assets/Projects/Case/SJS/Image 3.png";
-import Image4 from "../../../assets/Projects/Case/SJS/Image 4.png";
+import Image2 from "../../../assets/Projects/Case/SJS/Image 2.jpg";
+import Image3 from "../../../assets/Projects/Case/SJS/Image 3.jpg";
+import Image4 from "../../../assets/Projects/Case/SJS/Image 4.jpg";
 
 function SJS() {
   const images = [Image1, Image2, Image3, Image4];
@@ -48,7 +48,7 @@ function SJS() {
   return (
     <article className="projects-case-set">
       <div className="projects-case-set-heading">
-        <img src={Logo} alt="SJS Enterprises Limited Logo" />
+        <img decoding="async" loading="lazy" src={Logo} alt="SJS Enterprises Limited Logo" />
         <h3>SJS Enterprises Limited</h3>
       </div>
 
@@ -56,7 +56,7 @@ function SJS() {
         <div className="projects-case-set-imgs" ref={containerRef}>
           <div className="projects-case-set-imgs-slide" ref={slideRef}>
             {images.map((img, index) => (
-              <img key={index} src={img} alt="SJS Enterprises Limited Image" />
+              <img decoding="async" loading="lazy" key={index} src={img} alt="SJS Enterprises Limited Image" />
             ))}
           </div>
 

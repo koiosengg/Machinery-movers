@@ -49,7 +49,7 @@ function Collins() {
   return (
     <article className="projects-case-set">
       <div className="projects-case-set-heading">
-        <img src={Logo} alt="Collins Aerospace Logo" />
+        <img decoding="async" loading="lazy" src={Logo} alt="Collins Aerospace Logo" />
         <h3>Collins Aerospace</h3>
       </div>
 
@@ -57,7 +57,7 @@ function Collins() {
         <div className="projects-case-set-imgs" ref={containerRef}>
           <div className="projects-case-set-imgs-slide" ref={slideRef}>
             {images.map((img, index) => (
-              <img key={index} src={img} alt="Collins Aerospace Image" />
+              <img decoding="async" loading="lazy" key={index} src={img} alt="Collins Aerospace Image" />
             ))}
           </div>
 

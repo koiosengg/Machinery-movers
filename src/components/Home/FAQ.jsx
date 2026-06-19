@@ -62,7 +62,7 @@ function FAQ() {
                 <h3>{item.title}</h3>
                 <p>{item.desc}</p>
               </div>
-              <img src={BlueArrow} alt="Blue Arrow" />
+              <img decoding="async" loading="lazy" src={BlueArrow} alt="Blue Arrow" />
             </div>
 
             {index !== faqData.length - 1 && <hr />}

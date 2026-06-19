@@ -28,18 +28,18 @@ function Clients() {
           </p>
         </header>
         <div className="home-clients-container">
-          <img src={ClientLogo1} alt="EMMVEE" />
-          <img src={ClientLogo2} alt="Tata Power Solar" />
-          <img src={ClientLogo3} alt="Collins Areospace" />
-          <img src={ClientLogo4} alt="Shell" />
-          <img src={ClientLogo5} alt="Molex" />
-          <img src={ClientLogo6} alt="Toyota" />
-          <img src={ClientLogo7} alt="Bosch" />
-          <img src={ClientLogo8} alt="Philips" />
-          <img src={ClientLogo9} alt="L & T" />
-          <img src={ClientLogo10} alt="SFO Technologies" />
-          <img src={ClientLogo11} alt="LPSC" />
-          <img src={ClientLogo12} alt="Goodrich" />
+          <img decoding="async" loading="lazy" src={ClientLogo1} alt="EMMVEE" />
+          <img decoding="async" loading="lazy" src={ClientLogo2} alt="Tata Power Solar" />
+          <img decoding="async" loading="lazy" src={ClientLogo3} alt="Collins Areospace" />
+          <img decoding="async" loading="lazy" src={ClientLogo4} alt="Shell" />
+          <img decoding="async" loading="lazy" src={ClientLogo5} alt="Molex" />
+          <img decoding="async" loading="lazy" src={ClientLogo6} alt="Toyota" />
+          <img decoding="async" loading="lazy" src={ClientLogo7} alt="Bosch" />
+          <img decoding="async" loading="lazy" src={ClientLogo8} alt="Philips" />
+          <img decoding="async" loading="lazy" src={ClientLogo9} alt="L & T" />
+          <img decoding="async" loading="lazy" src={ClientLogo10} alt="SFO Technologies" />
+          <img decoding="async" loading="lazy" src={ClientLogo11} alt="LPSC" />
+          <img decoding="async" loading="lazy" src={ClientLogo12} alt="Goodrich" />
         </div>
       </div>
       <Link to="/about#Clients" className="tertiary-button">

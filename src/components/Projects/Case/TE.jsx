@@ -63,7 +63,7 @@ function TE() {
   return (
     <article className="projects-case-set">
       <div className="projects-case-set-heading">
-        <img src={Logo} alt="TE Connectivity Logo" />
+        <img decoding="async" loading="lazy" src={Logo} alt="TE Connectivity Logo" />
         <h3>TE Connectivity</h3>
       </div>
 
@@ -71,7 +71,7 @@ function TE() {
         <div className="projects-case-set-imgs" ref={containerRef}>
           <div className="projects-case-set-imgs-slide" ref={slideRef}>
             {images.map((img, index) => (
-              <img key={index} src={img} alt="TE Image" />
+              <img decoding="async" loading="lazy" key={index} src={img} alt="TE Image" />
             ))}
           </div>
           <button

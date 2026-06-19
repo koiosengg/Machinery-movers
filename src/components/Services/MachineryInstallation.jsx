@@ -1,5 +1,6 @@
 import React from "react";
 import SEO from "../SEO";
+import { MachineryInstallationStructuredData } from "../../structured-data";
 import Banner from "./MachineryInstallation/Banner";
 import Sectors from "./HeavyMachineLiftingAndShifting/Sectors";
 import Services from "./MachineryInstallation/Services";
@@ -23,6 +24,7 @@ function MachineryInstallation() {
         title="Industrial Machinery Installation Services | Machinery Movers"
         description="Expert industrial machinery installation, leveling, alignment, and commissioning. End-to-end relocation and setup for factory machinery in India."
       />
+      <MachineryInstallationStructuredData />
       <Banner />
       <Sectors />
       <Services />

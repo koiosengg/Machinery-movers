@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import Arrow from "../../../assets/Home/Banner/Arrow.svg";
-import GalleryImg1 from "../../../assets/Services/HeavyMachineLiftingAndShifting/Banner/Gallery Image 1.png";
+import GalleryImg1 from "../../../assets/Services/HeavyMachineLiftingAndShifting/Banner/Gallery Image 1.jpg";
 
 function Banner() {
   return (

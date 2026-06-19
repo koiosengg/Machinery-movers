@@ -7,7 +7,7 @@ function Ready() {
       <h2>
         TESTED. <br />
         APPR
-        <img src={Setting} alt="Setting Icon" />
+        <img decoding="async" loading="lazy" src={Setting} alt="Setting Icon" />
         VED <br />
         CERTIFIED.
       </h2>

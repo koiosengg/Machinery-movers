@@ -30,7 +30,7 @@ function Footer() {
             maxLength="10"
             required
           />
-          <button type="submit" className="primary-button">
+          <button type="submit" className="primary-button" aria-label="Submit">
             <p className="desktop">Submit</p>
             <svg
               xmlns="http://www.w3.org/2000/svg"

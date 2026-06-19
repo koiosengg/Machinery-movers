@@ -15,10 +15,10 @@ function BTS() {
           <iframe
             width="560"
             height="315"
-            src="https://www.youtube.com/embed/H8cjUmkT4CM?si=RssL5w2HjAjYcz37"
+            src="https://www.youtube-nocookie.com/embed/H8cjUmkT4CM?si=RssL5w2HjAjYcz37"
             title="YouTube video player"
             frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; compute-pressure"
             referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen
           ></iframe>
@@ -38,10 +38,10 @@ function BTS() {
           <iframe
             width="560"
             height="315"
-            src="https://www.youtube.com/embed/yyeM9JXjC8M?si=0GHNidHkdkc7w3ut"
+            src="https://www.youtube-nocookie.com/embed/yyeM9JXjC8M?si=0GHNidHkdkc7w3ut"
             title="YouTube video player"
             frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; compute-pressure"
             referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen
           ></iframe>
@@ -61,10 +61,10 @@ function BTS() {
           <iframe
             width="560"
             height="315"
-            src="https://www.youtube.com/embed/tl9VhFJx-Po?si=QovaDzyyHxZsLBTW"
+            src="https://www.youtube-nocookie.com/embed/tl9VhFJx-Po?si=QovaDzyyHxZsLBTW"
             title="YouTube video player"
             frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; compute-pressure"
             referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen
           ></iframe>
@@ -81,10 +81,10 @@ function BTS() {
           <iframe
             width="560"
             height="315"
-            src="https://www.youtube.com/embed/VmkUS-DRswU?si=AvNRZ2wZbw4H7r7L"
+            src="https://www.youtube-nocookie.com/embed/VmkUS-DRswU?si=AvNRZ2wZbw4H7r7L"
             title="YouTube video player"
             frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; compute-pressure"
             referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen
           ></iframe>

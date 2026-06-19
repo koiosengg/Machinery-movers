@@ -42,8 +42,8 @@ function Clients() {
           <img decoding="async" loading="lazy" src={ClientLogo12} alt="Goodrich" />
         </div>
       </div>
-      <Link to="/about#Clients" className="tertiary-button">
-        <p>View all</p>
+      <Link to="/about#Clients" className="tertiary-button" aria-label="View all clients we have served">
+        <p>View all clients</p>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"

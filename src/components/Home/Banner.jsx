@@ -138,6 +138,7 @@ function Banner() {
           href={galleryData[currentIndex].link}
           target="_blank"
           className="home-banner-youtube"
+          aria-label="Watch our machinery moving video on YouTube"
         >
           <p>Click here to watch</p>
           <svg

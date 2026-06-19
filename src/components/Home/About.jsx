@@ -16,8 +16,8 @@ function About() {
             our manual labour using sophisticated equipment in many of the
             reputed factories in and around Karnataka State
           </p>
-          <Link to="/about" className="secondary-button">
-            <p>Read More</p>
+          <Link to="/about" className="secondary-button" aria-label="Read more about Machinery Movers">
+            <p>Read More About Us</p>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"

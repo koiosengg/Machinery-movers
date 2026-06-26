@@ -189,6 +189,7 @@ function Footer() {
                   <a
                     href="https://maps.app.goo.gl/sqD61pVbL8e5x8qy6"
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     #2102 & 2103, BCCHS Layout, Vajarahalli, Opp Sharma
                     Transport Metro Pillar Number 249, Kanakapura Main Road,
@@ -215,7 +216,7 @@ function Footer() {
         </div>
         <div className="footer-bottom">
           <p>©All rights reserved.</p>
-          <a href="#">Privacy Policy</a>
+          <a href="/privacy-policy">Privacy Policy</a>
           <p>
             Crafted by{" "}
             <a

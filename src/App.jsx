@@ -14,6 +14,7 @@ const HeavyMachineLiftingAndShifting = lazy(() => import("./components/Services/
 const MachineryLoadingAndUnloading = lazy(() => import("./components/Services/MachineryLoadingAndUnloading"));
 const MachineryInstallation = lazy(() => import("./components/Services/MachineryInstallation"));
 const MachineryDismantling = lazy(() => import("./components/Services/MachineryDismantling"));
+const NotFound = lazy(() => import("./components/NotFound"));
 
 function App() {
   return (
@@ -57,7 +58,7 @@ function App() {
               element={<MachineryDismantling />}
             />
             <Route path="contact" element={<Contact />} />
-            <Route path="*" element={<Home />} />
+            <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
       </Suspense>

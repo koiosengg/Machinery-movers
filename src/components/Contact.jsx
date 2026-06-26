@@ -100,7 +100,7 @@ function Contact() {
               <h3>Call us</h3>
               <p>24 / 7 call support</p>
             </div>
-            <a href="tel:+919980335552" target="_blank">
+            <a href="tel:+919980335552">
               +91 99803 35552
             </a>
           </article>
@@ -123,7 +123,7 @@ function Contact() {
               <h3>Mail us</h3>
               <p>We are here to help</p>
             </div>
-            <a href="mailto:chinnappa@machinerymovers.co.in" target="_blank">
+            <a href="mailto:chinnappa@machinerymovers.co.in">
               chinnappa@machinerymovers.co.in
             </a>
           </article>
@@ -159,7 +159,7 @@ function Contact() {
               <h3>Visit us</h3>
               <p>Visit Our Office</p>
             </div>
-            <a href="https://maps.app.goo.gl/AaCstpZ9QsBP5WXX6" target="_blank">
+            <a href="https://maps.app.goo.gl/AaCstpZ9QsBP5WXX6" target="_blank" rel="noopener noreferrer">
               #2102 & 2103,BCCHS Layout , Vajarahalli, Opp Sharma Transport
               Metro Pillar Number 249, Knakapura Main Road, Bengaluru - 560109
             </a>

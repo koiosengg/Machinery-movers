@@ -137,6 +137,7 @@ function Banner() {
         <a
           href={galleryData[currentIndex].link}
           target="_blank"
+          rel="noopener noreferrer"
           className="home-banner-youtube"
           aria-label="Watch our machinery moving video on YouTube"
         >

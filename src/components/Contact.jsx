@@ -1,9 +1,53 @@
-import React from "react";
+import React, { useState } from "react";
 import SEO from "./SEO";
 import { ContactPageStructuredData } from "../structured-data";
 import Ready from "./Home/Ready";
 
 function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: ""
+  });
+  const [status, setStatus] = useState("IDLE"); // "IDLE" | "PENDING" | "SUCCESS" | "ERROR"
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("PENDING");
+    try {
+      const response = await fetch("https://formspree.io/f/mgolwqrg", {
+        method: "POST",
+        body: JSON.stringify(formData),
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      });
+      if (response.ok) {
+        setStatus("SUCCESS");
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: ""
+        });
+      } else {
+        setStatus("ERROR");
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setStatus("ERROR");
+    }
+  };
+
   return (
     <>
       <SEO
@@ -123,67 +167,111 @@ function Contact() {
         </div>
       </section>
       <section className="contact-form-container">
-        <form
-          className="contact-form"
-          action="https://formspree.io/f/mgolwqrg"
-          method="POST"
-          autoComplete="on"
-        >
-          <div className="contact-form-input">
-            <label htmlFor="name">Name</label>
-            <input
-              id="name"
-              name="name"
-              type="text"
-              placeholder="Enter your name"
-              autoComplete="name"
-              spellCheck="false"
-            />
+        {status === "SUCCESS" ? (
+          <div style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "10px",
+            background: "rgba(253, 190, 51, 0.1)",
+            border: "1px solid #fdbe33",
+            padding: "16px 24px",
+            color: "#fdbe33",
+            fontFamily: "Plus Jakarta Sans, sans-serif",
+            fontWeight: "600",
+            fontSize: "1.1rem",
+            width: "100%",
+            maxWidth: "600px",
+            margin: "0 auto 40px auto"
+          }}>
+            <svg width="24" height="24" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM8 15L3 10L4.41 8.59L8 12.17L15.59 4.58L17 6L8 15Z" fill="#fdbe33"/>
+            </svg>
+            Thank you! Your message has been sent successfully. We will get back to you shortly.
           </div>
-
-          <div className="contact-form-input">
-            <label htmlFor="email">Email</label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              placeholder="Enter your email"
-              autoComplete="email"
-              spellCheck="false"
-            />
-          </div>
-
-          <div className="contact-form-input">
-            <label htmlFor="subject">Subject</label>
-            <input
-              id="subject"
-              name="subject"
-              type="text"
-              placeholder="Enter subject"
-              autoComplete="off"
-              spellCheck="true"
-            />
-          </div>
-
-          <div className="contact-form-input">
-            <label htmlFor="message">Message</label>
-            <textarea
-              id="message"
-              name="message"
-              placeholder="Enter your message"
-              rows="4"
-              spellCheck="true"
-            />
-          </div>
-
-          <button
-            type="submit"
-            className="secondary-button"
-            aria-label="Send contact message"
+        ) : (
+          <form
+            className="contact-form"
+            onSubmit={handleSubmit}
+            autoComplete="on"
           >
-            <p>Send Message</p>
-          </button>
-        </form>
+            <div className="contact-form-input">
+              <label htmlFor="name">Name</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                placeholder="Enter your name"
+                autoComplete="name"
+                spellCheck="false"
+                required
+                value={formData.name}
+                onChange={handleChange}
+                disabled={status === "PENDING"}
+              />
+            </div>
+
+            <div className="contact-form-input">
+              <label htmlFor="email">Email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="Enter your email"
+                autoComplete="email"
+                spellCheck="false"
+                required
+                value={formData.email}
+                onChange={handleChange}
+                disabled={status === "PENDING"}
+              />
+            </div>
+
+            <div className="contact-form-input">
+              <label htmlFor="subject">Subject</label>
+              <input
+                id="subject"
+                name="subject"
+                type="text"
+                placeholder="Enter subject"
+                autoComplete="off"
+                spellCheck="true"
+                required
+                value={formData.subject}
+                onChange={handleChange}
+                disabled={status === "PENDING"}
+              />
+            </div>
+
+            <div className="contact-form-input">
+              <label htmlFor="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Enter your message"
+                rows="4"
+                spellCheck="true"
+                required
+                value={formData.message}
+                onChange={handleChange}
+                disabled={status === "PENDING"}
+              />
+            </div>
+
+            <button
+              type="submit"
+              className="secondary-button"
+              aria-label="Send contact message"
+              disabled={status === "PENDING"}
+            >
+              <p>{status === "PENDING" ? "Sending..." : "Send Message"}</p>
+            </button>
+            {status === "ERROR" && (
+              <p style={{ color: "#ff4d4d", fontSize: "0.95rem", marginTop: "12px", fontFamily: "Plus Jakarta Sans, sans-serif" }}>
+                Failed to send message. Please try again.
+              </p>
+            )}
+          </form>
+        )}
 
         <div className="contact-form-map">
           <iframe

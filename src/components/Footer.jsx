@@ -198,7 +198,8 @@ function Footer() {
                 <article>
                   <label>Call us</label>
                   <div className="contact-number">
-                    <a href="tel:+919980335552">+91 9980335552</a> <a>/</a>{" "}
+                    <a href="tel:+919980335552">+91 9980335552</a>{" "}
+                    <span>/</span>{" "}
                     <a href="tel:+919448263309">+91 9448263309</a>
                   </div>
                 </article>
@@ -217,7 +218,11 @@ function Footer() {
           <a href="#">Privacy Policy</a>
           <p>
             Crafted by{" "}
-            <a href="" target="_blank">
+            <a
+              href="https://www.koiostudio.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {" "}
               Koiostudio
             </a>

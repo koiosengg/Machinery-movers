@@ -2,7 +2,7 @@
 // JSON-LD SCHEMA DEFINITIONS FOR MACHINERY MOVERS
 // ============================================
 
-const BASE_URL = 'https://machinerymovers.in';
+const BASE_URL = 'https://www.machinerymovers.in';
 const COMPANY_NAME = 'Machinery Movers';
 const LOGO_URL = `${BASE_URL}/Logo.png`;
 

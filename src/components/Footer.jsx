@@ -216,7 +216,7 @@ function Footer() {
         </div>
         <div className="footer-bottom">
           <p>©All rights reserved.</p>
-          <a href="/privacy-policy">Privacy Policy</a>
+          <Link to="/privacy-policy">Privacy Policy</Link>
           <p>
             Crafted by{" "}
             <a

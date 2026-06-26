@@ -8,7 +8,15 @@ function ScrollToTop() {
     window.scrollTo({
       top: 0,
       left: 0,
-      behavior: "instant", // or "smooth"
+      behavior: "instant",
+    });
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: "page_view",
+      page_location: window.location.href,
+      page_path: pathname,
+      page_title: document.title,
     });
   }, [pathname]);
 

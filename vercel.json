@@ -19,9 +19,20 @@
       ]
     }
   ],
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "machinerymovers.in"
+        }
+      ],
+      "destination": "https://www.machinerymovers.in/:path*",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/" }
   ]
-  }
-
-  
+}

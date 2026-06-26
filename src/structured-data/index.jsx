@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect } from "react";
 import {
   organizationSchema,
   localBusinessSchema,
@@ -11,16 +11,24 @@ import {
 } from "./schemas";
 
 /**
- * JsonLdScript component to inject JSON-LD script into the DOM.
+ * Injects JSON-LD into document.head for correct script placement.
  */
-export const JsonLdScript = ({ data }) => (
-  <script
-    type="application/ld+json"
-    dangerouslySetInnerHTML={{
-      __html: JSON.stringify(data)
-    }}
-  />
-);
+export const JsonLdScript = ({ data }) => {
+  const json = JSON.stringify(data);
+
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.text = json;
+    document.head.appendChild(script);
+
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, [json]);
+
+  return null;
+};
 
 /**
  * Structured Data for Homepage

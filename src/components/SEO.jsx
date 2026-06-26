@@ -1,6 +1,11 @@
 import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
+const BASE_URL = "https://www.machinerymovers.in";
 
 function SEO({ title, description }) {
+  const { pathname } = useLocation();
+
   useEffect(() => {
     if (title) {
       document.title = title;
@@ -14,7 +19,17 @@ function SEO({ title, description }) {
       }
       metaDescription.setAttribute("content", description);
     }
-  }, [title, description]);
+
+    const canonicalHref =
+      pathname === "/" ? `${BASE_URL}/` : `${BASE_URL}${pathname}`;
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.setAttribute("rel", "canonical");
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute("href", canonicalHref);
+  }, [title, description, pathname]);
 
   return null;
 }

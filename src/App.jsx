@@ -15,6 +15,7 @@ const MachineryLoadingAndUnloading = lazy(() => import("./components/Services/Ma
 const MachineryInstallation = lazy(() => import("./components/Services/MachineryInstallation"));
 const MachineryDismantling = lazy(() => import("./components/Services/MachineryDismantling"));
 const NotFound = lazy(() => import("./components/NotFound"));
+const PrivacyPolicy = lazy(() => import("./components/PrivacyPolicy"));
 
 function App() {
   return (
@@ -58,6 +59,7 @@ function App() {
               element={<MachineryDismantling />}
             />
             <Route path="contact" element={<Contact />} />
+            <Route path="privacy-policy" element={<PrivacyPolicy />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>

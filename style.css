@@ -3257,3 +3257,47 @@ footer {
     display: none;
   }
 }
+
+.legal-page .template-heading h1 {
+  color: var(--Blue-Primary, #030f27);
+  font-family: "Plus Jakarta Sans";
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: -1.2px;
+}
+
+.legal-content {
+  width: 100%;
+  max-width: 800px;
+  color: var(--Text-Black-text-black-300, #606060);
+  font-family: "Plus Jakarta Sans";
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.legal-content h2 {
+  color: var(--Blue-Primary, #030f27);
+  font-size: 22px;
+  font-weight: 700;
+  margin: 32px 0 12px;
+}
+
+.legal-content p,
+.legal-content ul {
+  margin: 0 0 16px;
+}
+
+.legal-content ul {
+  padding-left: 24px;
+}
+
+.legal-content a {
+  color: var(--Blue-Primary, #030f27);
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .legal-page .template-heading h1 {
+    font-size: 28px;
+  }
+}

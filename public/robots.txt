@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.machinerymovers.in/sitemap.xml
+Sitemap: https://www.machinerymovers.info/sitemap.xml

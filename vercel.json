@@ -25,10 +25,10 @@
       "has": [
         {
           "type": "host",
-          "value": "machinerymovers.in"
+          "value": "machinerymovers.info"
         }
       ],
-      "destination": "https://www.machinerymovers.in/:path*",
+      "destination": "https://www.machinerymovers.info/:path*",
       "permanent": true
     }
   ],

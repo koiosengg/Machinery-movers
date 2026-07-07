@@ -20,7 +20,7 @@ function PrivacyPolicy() {
           <p>
             Machinery Movers (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) operates
             the website{" "}
-            <a href="https://www.machinerymovers.in">www.machinerymovers.in</a>.
+            <a href="https://www.machinerymovers.info">www.machinerymovers.info</a>.
             This Privacy Policy explains how we collect, use, and safeguard
             information when you visit our website or contact us.
           </p>

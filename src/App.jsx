@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -16,13 +16,18 @@ const MachineryInstallation = lazy(() => import("./components/Services/Machinery
 const MachineryDismantling = lazy(() => import("./components/Services/MachineryDismantling"));
 const NotFound = lazy(() => import("./components/NotFound"));
 const PrivacyPolicy = lazy(() => import("./components/PrivacyPolicy"));
+const ThankYou = lazy(() => import("./components/ThankYou"));
 
-function App() {
+function AppContent() {
+  const location = useLocation();
+  const normalizedPath = location.pathname.replace(/\/$/, "");
+  const hideHeaderFooter = normalizedPath === "/thank-you" || normalizedPath === "/thanku";
+
   return (
-    <BrowserRouter>
+    <>
       <ScrollToTop />
       <ScrollToHash />
-      <Navbar />
+      {!hideHeaderFooter && <Navbar />}
       <Suspense fallback={
         <div style={{
           display: "flex",
@@ -59,12 +64,22 @@ function App() {
               element={<MachineryDismantling />}
             />
             <Route path="contact" element={<Contact />} />
+            <Route path="thank-you" element={<ThankYou />} />
+            <Route path="thanku" element={<ThankYou />} />
             <Route path="privacy-policy" element={<PrivacyPolicy />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
       </Suspense>
-      <Footer />
+      {!hideHeaderFooter && <Footer />}
+    </>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <AppContent />
     </BrowserRouter>
   );
 }

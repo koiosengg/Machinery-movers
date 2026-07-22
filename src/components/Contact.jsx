@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import SEO from "./SEO";
 import { ContactPageStructuredData } from "../structured-data";
 import Ready from "./Home/Ready";
 
 function Contact() {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -39,6 +41,7 @@ function Contact() {
           subject: "",
           message: ""
         });
+        navigate("/thank-you");
       } else {
         setStatus("ERROR");
       }

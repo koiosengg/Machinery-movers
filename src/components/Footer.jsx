@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Logo from "/Logo.png";
 
 function Footer() {
+  const navigate = useNavigate();
   const [mobile, setMobile] = useState("");
   const [status, setStatus] = useState("IDLE"); // "IDLE" | "PENDING" | "SUCCESS" | "ERROR"
 
@@ -10,7 +11,7 @@ function Footer() {
     e.preventDefault();
     setStatus("PENDING");
     try {
-      const response = await fetch("https://formspree.io/f/mgolwqrg", {
+      const response = await fetch("https://formspree.io/f/xwvgqgoa", {
         method: "POST",
         body: JSON.stringify({ mobile_number: mobile }),
         headers: {
@@ -21,6 +22,7 @@ function Footer() {
       if (response.ok) {
         setStatus("SUCCESS");
         setMobile("");
+        navigate("/thank-you");
       } else {
         setStatus("ERROR");
       }
@@ -43,102 +45,69 @@ function Footer() {
             understand and support your requirement promptly
           </p>
         </header>
-        {status === "SUCCESS" ? (
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "10px",
-              background: "rgba(253, 190, 51, 0.1)",
-              border: "1px solid #fdbe33",
-              padding: "12px 24px",
-              color: "#fdbe33",
-              fontFamily: "Plus Jakarta Sans, sans-serif",
-              fontWeight: "600",
-              fontSize: "1rem",
-              width: "100%",
-              maxWidth: "400px",
-            }}
+        <form onSubmit={handleSubmit} autoComplete="on">
+          <input
+            type="tel"
+            id="mobile_number"
+            name="mobile_number"
+            placeholder="Enter your Mobile Number"
+            pattern="[0-9]{10}"
+            maxLength="10"
+            required
+            value={mobile}
+            onChange={(e) => setMobile(e.target.value)}
+            disabled={status === "PENDING"}
+          />
+          <button
+            type="submit"
+            className="primary-button"
+            aria-label="Submit"
+            disabled={status === "PENDING"}
           >
+            <p className="desktop">
+              {status === "PENDING" ? "Sending..." : "Submit"}
+            </p>
             <svg
+              xmlns="http://www.w3.org/2000/svg"
               width="20"
               height="20"
               viewBox="0 0 20 20"
               fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+              className="mobile"
             >
-              <path
-                d="M10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM8 15L3 10L4.41 8.59L8 12.17L15.59 4.58L17 6L8 15Z"
-                fill="#fdbe33"
-              />
-            </svg>
-            Thank you! Our team will call you shortly.
-          </div>
-        ) : (
-          <form onSubmit={handleSubmit} autoComplete="on">
-            <input
-              type="tel"
-              id="mobile_number"
-              name="mobile_number"
-              placeholder="Enter your Mobile Number"
-              pattern="[0-9]{10}"
-              maxLength="10"
-              required
-              value={mobile}
-              onChange={(e) => setMobile(e.target.value)}
-              disabled={status === "PENDING"}
-            />
-            <button
-              type="submit"
-              className="primary-button"
-              aria-label="Submit"
-              disabled={status === "PENDING"}
-            >
-              <p className="desktop">
-                {status === "PENDING" ? "Sending..." : "Submit"}
-              </p>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
+              <mask
+                id="mask0_655_3331"
+                style={{ maskType: "alpha" }}
+                maskUnits="userSpaceOnUse"
+                x="0"
+                y="0"
                 width="20"
                 height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                className="mobile"
               >
-                <mask
-                  id="mask0_655_3331"
-                  style={{ maskType: "alpha" }}
-                  maskUnits="userSpaceOnUse"
-                  x="0"
-                  y="0"
-                  width="20"
-                  height="20"
-                >
-                  <rect width="20" height="20" fill="#D9D9D9" />
-                </mask>
-                <g mask="url(#mask0_655_3331)">
-                  <path
-                    d="M7.01671 16.6663L5.83337 15.483L11.3167 9.99967L5.83337 4.51634L7.01671 3.33301L13.6834 9.99967L7.01671 16.6663Z"
-                    fill="#030F27"
-                  />
-                </g>
-              </svg>
-            </button>
-            {status === "ERROR" && (
-              <p
-                style={{
-                  color: "#ff4d4d",
-                  fontSize: "0.9rem",
-                  marginTop: "8px",
-                  fontFamily: "Plus Jakarta Sans, sans-serif",
-                  width: "100%",
-                }}
-              >
-                Submission failed. Please try again.
-              </p>
-            )}
-          </form>
-        )}
+                <rect width="20" height="20" fill="#D9D9D9" />
+              </mask>
+              <g mask="url(#mask0_655_3331)">
+                <path
+                  d="M7.01671 16.6663L5.83337 15.483L11.3167 9.99967L5.83337 4.51634L7.01671 3.33301L13.6834 9.99967L7.01671 16.6663Z"
+                  fill="#030F27"
+                />
+              </g>
+            </svg>
+          </button>
+          {status === "ERROR" && (
+            <p
+              style={{
+                color: "#ff4d4d",
+                fontSize: "0.9rem",
+                marginTop: "8px",
+                fontFamily: "Plus Jakarta Sans, sans-serif",
+                width: "100%",
+              }}
+            >
+              Submission failed. Please try again.
+            </p>
+          )}
+        </form>
       </div>
       <div className="footer">
         <div className="footer-top">

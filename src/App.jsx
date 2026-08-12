@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import ScrollToHash from "./components/ScrollToHash";
+import FloatingContact from "./components/FloatingContact";
 
 // Lazy-loaded routes for code-splitting
 const About = lazy(() => import("./components/About"));
@@ -72,6 +73,7 @@ function AppContent() {
         </Routes>
       </Suspense>
       {!hideHeaderFooter && <Footer />}
+      <FloatingContact />
     </>
   );
 }

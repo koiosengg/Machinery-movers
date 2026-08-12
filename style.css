@@ -2340,11 +2340,238 @@ footer {
   text-decoration: none;
   transition: all 0.3s;
 }
+.legal-page .template-heading h1 {
+  color: var(--Blue-Primary, #030f27);
+  font-family: "Plus Jakarta Sans";
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: -1.2px;
+}
 
+.legal-content {
+  width: 100%;
+  max-width: 800px;
+  color: var(--Text-Black-text-black-300, #606060);
+  font-family: "Plus Jakarta Sans";
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.legal-content h2 {
+  color: var(--Blue-Primary, #030f27);
+  font-size: 22px;
+  font-weight: 700;
+  margin: 32px 0 12px;
+}
+
+.legal-content p,
+.legal-content ul {
+  margin: 0 0 16px;
+}
+
+.legal-content ul {
+  padding-left: 24px;
+}
+
+.legal-content a {
+  color: var(--Blue-Primary, #030f27);
+  text-decoration: underline;
+}
 .footer-bottom a:hover {
   color: #fdbe33;
 }
+.thankyou-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  background: #030f27;
+}
 
+.thankyou-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 650px;
+  width: 100%;
+  padding: 48px 32px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(3, 15, 39, 0.05);
+}
+
+.thankyou-icon {
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.thankyou-card h1 {
+  color: #030f27;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 42px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin-bottom: 8px;
+}
+
+.thankyou-card h2 {
+  color: #353f52;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.thankyou-card p {
+  color: #606060;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 520px;
+}
+
+.thankyou-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.thankyou-actions .secondary-button {
+  text-decoration: none;
+  height: 48px;
+  padding: 0 24px;
+}
+
+.thankyou-newsletter-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px;
+  background: radial-gradient(
+    circle at 50% 100%,
+    #1b4db3 0%,
+    #143a8a 0%,
+    #030f27 70%
+  );
+}
+/* Floating Contact Button (Bottom Right) */
+.floating-contact-btn {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.floating-contact-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--Blue-Primary, #030f27);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  box-shadow:
+    0 4px 16px rgba(3, 15, 39, 0.35),
+    0 2px 6px rgba(0, 0, 0, 0.15);
+  flex-shrink: 0;
+  transition:
+    transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+    background-color 0.25s ease,
+    box-shadow 0.25s ease;
+  z-index: 2;
+}
+
+.floating-contact-btn:hover .floating-contact-icon {
+  background: var(--Blue-blue-400, #353f52);
+  transform: scale(1.06);
+  box-shadow:
+    0 6px 20px rgba(3, 15, 39, 0.45),
+    0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.floating-contact-btn:active .floating-contact-icon {
+  transform: scale(0.96);
+}
+
+/* Hover reveal pill */
+.floating-contact-pill {
+  position: relative;
+  background: var(--Blue-Primary, #030f27);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 0;
+  max-width: 0;
+  opacity: 0;
+  visibility: hidden;
+  margin-right: 0;
+  border-radius: 16px;
+  box-shadow:
+    0 4px 20px rgba(3, 15, 39, 0.4),
+    0 1px 4px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateX(12px);
+  transition:
+    max-width 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.25s ease,
+    padding 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    margin-right 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 0.35s ease;
+  pointer-events: none;
+  z-index: 1;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.floating-contact-btn:hover .floating-contact-pill {
+  max-width: 160px;
+  opacity: 1;
+  visibility: visible;
+  padding: 10px 18px;
+  margin-right: 10px;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+/* Speech bubble right-pointing arrow towards circle icon */
+.floating-contact-pill::before {
+  content: "";
+  position: absolute;
+  right: -7px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 8px solid var(--Blue-Primary, #030f27);
+}
+
+.floating-contact-pill span {
+  color: #ffffff;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
 .mobile {
   display: none;
 }
@@ -3255,139 +3482,9 @@ footer {
   .home-banner-youtube {
     display: none;
   }
-}
-
-.legal-page .template-heading h1 {
-  color: var(--Blue-Primary, #030f27);
-  font-family: "Plus Jakarta Sans";
-  font-size: 40px;
-  font-weight: 700;
-  letter-spacing: -1.2px;
-}
-
-.legal-content {
-  width: 100%;
-  max-width: 800px;
-  color: var(--Text-Black-text-black-300, #606060);
-  font-family: "Plus Jakarta Sans";
-  font-size: 16px;
-  line-height: 1.7;
-}
-
-.legal-content h2 {
-  color: var(--Blue-Primary, #030f27);
-  font-size: 22px;
-  font-weight: 700;
-  margin: 32px 0 12px;
-}
-
-.legal-content p,
-.legal-content ul {
-  margin: 0 0 16px;
-}
-
-.legal-content ul {
-  padding-left: 24px;
-}
-
-.legal-content a {
-  color: var(--Blue-Primary, #030f27);
-  text-decoration: underline;
-}
-
-@media (max-width: 768px) {
   .legal-page .template-heading h1 {
     font-size: 28px;
   }
-}
-
-/* Thank You Page */
-
-.thankyou-container {
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 60px 20px;
-  background: #030f27;
-}
-
-.thankyou-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  max-width: 650px;
-  width: 100%;
-  padding: 48px 32px;
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(3, 15, 39, 0.05);
-}
-
-.thankyou-icon {
-  margin-bottom: 24px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.thankyou-card h1 {
-  color: #030f27;
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-size: 42px;
-  font-weight: 800;
-  letter-spacing: -1px;
-  margin-bottom: 8px;
-}
-
-.thankyou-card h2 {
-  color: #353f52;
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 16px;
-}
-
-.thankyou-card p {
-  color: #606060;
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
-  max-width: 520px;
-}
-
-.thankyou-actions {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.thankyou-actions .secondary-button {
-  text-decoration: none;
-  height: 48px;
-  padding: 0 24px;
-}
-
-.thankyou-newsletter-section {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 80px 20px;
-  background: radial-gradient(
-    circle at 50% 100%,
-    #1b4db3 0%,
-    #143a8a 0%,
-    #030f27 70%
-  );
-}
-
-@media (max-width: 768px) {
   .thankyou-container {
     padding: 40px 16px 20px 16px;
   }
@@ -3411,5 +3508,25 @@ footer {
   .thankyou-actions .secondary-button {
     width: 100%;
     justify-content: center;
+  }
+  .floating-contact-btn {
+    bottom: 20px;
+    right: 16px;
+  }
+  .floating-contact-icon {
+    width: 48px;
+    height: 48px;
+  }
+  .floating-contact-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+  .floating-contact-btn:hover .floating-contact-pill {
+    max-width: 140px;
+    padding: 8px 14px;
+    margin-right: 8px;
+  }
+  .floating-contact-pill span {
+    font-size: 14px;
   }
 }
